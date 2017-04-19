@@ -1,0 +1,89 @@
+{
+    // 脚本执行的环境,不同的执行环境有不同的预定义全局变量
+    "env": {
+    "browser": true,
+        "es6": true,
+        "node": true
+},
+    "plugins": [
+    "react"
+],
+    // 需要同构babel-eslint来解析es7.decorators,es7.classProperties
+    "parser": "babel-eslint",
+    // 使用推荐的规范配置:http://eslint.org/docs/rules/
+    //"extends": "eslint:recommended",
+    "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+],
+    "globals": {
+    "_": true,
+        "React": true,
+        "classnames": true
+},
+    // https://github.com/airbnb/javascript
+    // "extends": "eslint-config-airbnb",
+    // 解析规则,决定ESLint认为哪些是错误
+    "parserOptions": {
+    // ECMAScript中的模块类型
+    "sourceType": "module",
+        // 指定要使用的ECMAScript的版本
+        "ecmaVersion": 7,
+        // 额外的语言特性配置
+        "ecmaFeatures": {
+        // 在全局作用域允许return语句
+        "globalReturn": true,
+            // 开启全局的严格模式
+            "impliedStrict": true,
+            // 支持未来的选项
+            "experimentalObjectRestSpread": true,
+            // 使用JSX
+            "jsx": true
+    }
+},
+    // lint规则配置 "off" or 0 "warn" or 1 "error" or 2
+    // https://github.com/airbnb/javascript
+    "rules": {
+    "strict": "error",
+        // 缩进:4个空格
+        "indent": [
+        "warn",
+        4,
+        {
+            "SwitchCase": 1
+        }
+    ],
+        // 引号 单引号
+
+        "quotes": [
+        "warn",
+        "single"
+    ],
+        // 禁止多余的分号
+        "no-extra-semi": "warn",
+        // 分号 加分号 http://eslint.org/docs/rules/semi
+        "semi": [
+        "warn",
+        "always"
+    ],
+        //不允许有console调试
+        "no-console": "warn",
+        "no-alert": "warn",
+        // 允许在 case 子句中使用词法声明
+        "no-case-declarations": "off",
+        "react/prop-types": "off",
+        "react/display-name": "off",
+        "react/require-render-return": "error",
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unknown-property.md
+        "react/no-unknown-property": "error",
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md
+        //"react/no-set-state": "error",
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md
+        // "react/no-multi-comp": "error",
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-direct-mutation-state.md
+        "react/no-direct-mutation-state": "error",
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-danger.md
+        "react/no-danger": "off",
+        "no-class-assign": "off"
+}
+}
