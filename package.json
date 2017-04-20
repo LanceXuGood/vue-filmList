@@ -5,7 +5,7 @@
   "repository": "https://github.com/LanceXuGood/vue-vux-xy.git",
   "scripts": {
     "start": "node server.js",
-    "lint": "eslint ./src --ext .js --ext .jsx --cache",
+    "lint": "eslint ./src --ext .js --ext .vue --cache",
     "build-dev": "webpack --config webpack.config.js --progress --colors -p",
     "build-pro": "webpack --config webpack.config.build.js --progress --colors -p"
   },
@@ -28,8 +28,9 @@
     "css-loader": "^0.26.1",
     "es6-promise": "^4.0.5",
     "eslint": "^3.16.1",
+    "eslint-config-vue": "^2.0.2",
     "eslint-loader": "^1.6.3",
-    "eslint-plugin-react": "^6.10.0",
+    "eslint-plugin-vue": "^2.0.1",
     "express": "^4.14.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
@@ -45,6 +46,7 @@
     "sass-loader": "^6.0.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
+    "vue-template-compiler": "^2.2.6",
     "webpack": "^2.3.1",
     "webpack-dev-server": "^2.4.2"
   },
@@ -52,6 +54,7 @@
     "history": "^4.6.1",
     "vue": "^2.2.6",
     "vue-loader": "^11.3.4",
+    "vue-router": "^2.4.0",
     "vuex": "^2.3.1",
     "vux": "^2.2.1-rc.7"
   }

@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
 const isDev = ENV !== 'production';
 console.log(isDev);
@@ -14,8 +13,7 @@ const vendor = [
 ];
 
 module.exports = {
-    entry : ['webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:4000', 'babel-polyfill', path.resolve(__dirname, 'src/main.js')]
-    ,
+    entry: ['webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:4000', 'babel-polyfill', path.resolve(__dirname, 'src/main.js')],
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -23,7 +21,12 @@ module.exports = {
         publicPath: ''
     },
     resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js', //TDDO why?
+            '@': path.resolve('src')
+        },
         extensions: ['.web.js', '.js', '.vue', '.json']
+
     },
     module: {
         rules: [
@@ -42,7 +45,7 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                user: ['vue-loader']
+                use: ['vue-loader']
             },
             {
                 test: /\.js$|\.js[x]?$/,
@@ -50,7 +53,7 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                         options: {
-                            presets: [['es2015', {'modules': false}], 'stage-3'],
+                            presets: [['es2015', { 'modules': false }], 'stage-3'],
                             plugins: [
                                 'transform-decorators-legacy',
                                 'transform-class-properties',
@@ -123,7 +126,7 @@ module.exports = {
     },
     context: __dirname,
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({name: 'vendor', minChunks: Infinity}),
+        //new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
         new HtmlWebpackPlugin({
             title: '',
             hash: true,
