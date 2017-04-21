@@ -1,4 +1,4 @@
-{
+module.exports ={
     // 脚本执行的环境,不同的执行环境有不同的预定义全局变量
     "env": {
         "browser": true,
@@ -13,15 +13,14 @@
     // 使用推荐的规范配置:http://eslint.org/docs/rules/
     //"extends": "eslint:recommended",
     "extends": [
+        "standard",
         "vue",
         "eslint:recommended"
     ],
     "globals": {
         "_": true,
-        "React": true,
         "process.env": true,
-        "__DEV__": true,
-        "classnames": true
+        "__DEV__": true
     },
     // https://github.com/airbnb/javascript
     // "extends": "eslint-config-airbnb",
@@ -38,9 +37,7 @@
             // 开启全局的严格模式
             "impliedStrict": true,
             // 支持未来的选项
-            "experimentalObjectRestSpread": true,
-            // 使用JSX
-            "jsx": true
+            "experimentalObjectRestSpread": true
         }
     },
     // lint规则配置 "off" or 0 "warn" or 1 "error" or 2
