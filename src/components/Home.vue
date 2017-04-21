@@ -1,19 +1,15 @@
 <template>
-    <div class="hello">
-        <el-button>默认按钮</el-button>
-        <el-button type="primary">主要按钮</el-button>
-        <el-button type="text">文字按钮</el-button>
+    <div class="home">
+        <el-progress :percentage="0"></el-progress>
+        <el-progress :percentage="70"></el-progress>
+        <el-progress :percentage="100" status="success"></el-progress>
+        <el-progress :percentage="50" status="exception"></el-progress>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'hello',
-        data () {
-            return {
-                msg: 'Welcome to Your Vue.js App 123'
-            };
-        }
+        name: 'home',
     };
 </script>
 

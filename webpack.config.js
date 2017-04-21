@@ -31,6 +31,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'file-loader'
+            },
+            {
                 test: /\.jpe?g$|\.gif$|\.png$/i,
                 use: [
                     {
@@ -45,7 +49,51 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                use: ['vue-loader']
+                loader: 'vue-loader',
+                options: {
+                    loaders: [
+                        {
+                            test: /\.scss/,
+                            use: [
+                                'style-loader',
+                                {
+                                    loader: 'css-loader',
+                                    options: {
+                                        importLoaders: 1,
+                                    }
+                                },
+                                {
+                                    loader: 'postcss-loader',
+                                    options: {
+                                        sourceMap: 'inline',
+                                    }
+                                },
+                                'sass-loader',
+                            ],
+                            exclude: /node_modules/
+                        },
+                        {
+                            test: /\.less/,
+                            use: [
+                                'style-loader',
+                                {
+                                    loader: 'css-loader',
+                                    options: {
+                                        importLoaders: 1,
+                                    }
+                                },
+                                {
+                                    loader: 'postcss-loader',
+                                    options: {
+                                        sourceMap: 'inline',
+                                    }
+                                },
+                                'less-loader',
+                            ],
+                            exclude: /node_modules/
+                        }
+                    ]
+                }
             },
             {
                 test: /\.js$|\.js[x]?$/,
@@ -53,11 +101,14 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                         options: {
-                            presets: [['es2015', { 'modules': false }], 'stage-3'],
+                            presets: [['es2015', { 'modules': false }]],
                             plugins: [
-                                'transform-decorators-legacy',
-                                'transform-class-properties',
-                                //['import', {'libraryName': 'antd', 'style': 'css'}]
+                                ["component", [
+                                    {
+                                        "libraryName": "element-ui",
+                                        "styleLibraryName": "theme-default"
+                                    }
+                                ]]
                             ]
                         }
                     },
@@ -122,6 +173,8 @@ module.exports = {
                     }
                 ]
             }
+
+
         ]
     },
     context: __dirname,
