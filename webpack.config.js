@@ -13,7 +13,7 @@ const vendor = [
 ];
 
 module.exports = {
-    entry: ['webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:4000', 'babel-polyfill', path.resolve(__dirname, 'src/main.js')],
+    entry: ['webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:8001', 'babel-polyfill', path.resolve(__dirname, 'src/main.js')],
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'build'),

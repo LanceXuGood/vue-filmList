@@ -13,6 +13,6 @@ const server = new WebpackDevServer(compiler, {
     noInfo: false,
 });
 
-server.listen(4000, 'localhost' ,function() {
-    console.log('Starting server on http://localhost:4000');
+server.listen(8001, 'localhost' ,function() {
+    console.log('Starting server on http://localhost:8001');
 });
