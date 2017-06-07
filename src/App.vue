@@ -1,5 +1,9 @@
 <template>
     <div id="app">
+        <section class='sec'>
+        </section>
+        <section class='sec1'>
+        </section>
         <img src="./assets/logo.png">
         <el-breadcrumb separator="/">
             <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
@@ -22,6 +26,12 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        margin-top: 60px;
+        margin-top: 120px;
+    }
+    .sec{
+        width: 600px;
+        height: 90px;
+        background: #000;
+        margin:0 auto;
     }
 </style>

@@ -2,7 +2,7 @@
     <div class="hello">
         <el-button>默认按钮</el-button>
         <el-button type="primary">主要按钮</el-button>
-        <el-button type="text">文字按钮</el-button>
+        <el-button type="text" click="doThis">文字按钮</el-button>
     </div>
 </template>
 
