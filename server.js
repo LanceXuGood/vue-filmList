@@ -6,6 +6,7 @@ const compiler = Webpack(webpackConfig);
 const server = new WebpackDevServer(compiler, {
     publicPath: webpackConfig.output.publicPath,
     historyApiFallback: true,
+    disableHostCheck : true,
     hot:true,
     stats: {
         colors: true

@@ -163,6 +163,7 @@ module.exports = {
                 'NODE_ENV': JSON.stringify(ENV)
             }
         }),
+        new webpack.optimize.ModuleConcatenationPlugin(), //webpack3新增
         new webpack.NoEmitOnErrorsPlugin(),
     ],
 };
