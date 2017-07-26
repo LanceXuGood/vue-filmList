@@ -22,7 +22,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'vue$': 'vue/dist/vue.esm.js', //TDDO why?
+            'vue$': 'vue/dist/vue.esm.js',
             '@': path.resolve('src')
         },
         extensions: ['.web.js', '.js', '.vue', '.json']

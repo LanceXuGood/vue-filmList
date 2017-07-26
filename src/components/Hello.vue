@@ -3,6 +3,7 @@
         <el-button>默认按钮</el-button>
         <el-button type="primary">主要按钮</el-button>
         <el-button type="text" click="doThis">文字按钮</el-button>
+        <div>{{msg}}</div>
     </div>
 </template>
 
@@ -11,7 +12,7 @@
         name: 'hello',
         data () {
             return {
-                msg: 'Welcome to Your Vue.js App 123'
+                msg: 'Welcome to Your Vue.js App 123',
             };
         }
     };
