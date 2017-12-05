@@ -34,30 +34,26 @@ module.exports = {
         },
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 loader: 'file-loader'
             },
             {
                 test: /\.jpe?g$|\.gif$|\.png$/i,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10000,
-                            name: 'images/[hash:8].[name].[ext]',
-                        }
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000,
+                        name: 'images/[hash:8].[name].[ext]',
                     }
-                ],
+                }],
                 exclude: /node_modules/,
             },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
-                    loaders: [
-                        {
+                    loaders: [{
                             test: /\.scss/,
                             use: [
                                 'style-loader',
@@ -101,23 +97,10 @@ module.exports = {
                 }
             },
             {
-                test: /\.js$|\.js[x]?$/,
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: [['es2015', { 'modules': false }]],
-                            plugins: [
-                                ["component", [
-                                    {
-                                        "libraryName": "element-ui",
-                                        "styleLibraryName": "theme-default"
-                                    }
-                                ]]
-                            ]
-                        }
-                    },
-                ],
+                test: /\.js$/,
+                use: [{
+                    loader: 'babel-loader',
+                }],
                 exclude: /node_modules/,
             },
             {
@@ -140,26 +123,6 @@ module.exports = {
                 ],
                 exclude: /node_modules/
             },
-            // {
-            //     test: /\.less/,
-            //     use: [
-            //         'style-loader',
-            //         {
-            //             loader: 'css-loader',
-            //             options: {
-            //                 importLoaders: 1,
-            //             }
-            //         },
-            //         {
-            //             loader: 'postcss-loader',
-            //             options: {
-            //                 sourceMap: 'inline',
-            //             }
-            //         },
-            //         'less-loader',
-            //     ],
-            //     exclude: /node_modules/
-            // },
             {
                 test: /\.css/,
                 use: [
