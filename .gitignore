@@ -4,4 +4,6 @@ build/**
 /build
 **/*.log
 *.log
+/.eslintcache
+/.gitattributes
 

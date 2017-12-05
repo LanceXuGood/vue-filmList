@@ -12,8 +12,15 @@ const server = new WebpackDevServer(compiler, {
         colors: true
     },
     noInfo: false,
+    proxy: {
+        '/v2': {
+            target: 'https://api.douban.com/',
+            secure: false,
+            changeOrigin: true
+        }
+    }
 });
-
-server.listen(8001, 'localhost' ,function() {
-    console.log('Starting server on http://localhost:8001');
+console.log(server);
+server.listen(8002, 'localhost' ,function() {
+    console.log('Starting server on http://localhost:8002');
 });

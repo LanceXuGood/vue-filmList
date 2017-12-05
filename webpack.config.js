@@ -13,7 +13,7 @@ const vendor = [
 ];
 
 module.exports = {
-    entry: ['webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:8001', 'babel-polyfill', path.resolve(__dirname, 'src/main.js')],
+    entry: ['webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:8002', 'babel-polyfill', path.resolve(__dirname, 'src/main.js')],
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -27,6 +27,11 @@ module.exports = {
         },
         extensions: ['.web.js', '.js', '.vue', '.json']
 
+    },
+    resolveLoader: {
+        alias: {
+            'scss-loader': 'sass-loader',
+        },
     },
     module: {
         rules: [
@@ -135,26 +140,26 @@ module.exports = {
                 ],
                 exclude: /node_modules/
             },
-            {
-                test: /\.less/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: 'inline',
-                        }
-                    },
-                    'less-loader',
-                ],
-                exclude: /node_modules/
-            },
+            // {
+            //     test: /\.less/,
+            //     use: [
+            //         'style-loader',
+            //         {
+            //             loader: 'css-loader',
+            //             options: {
+            //                 importLoaders: 1,
+            //             }
+            //         },
+            //         {
+            //             loader: 'postcss-loader',
+            //             options: {
+            //                 sourceMap: 'inline',
+            //             }
+            //         },
+            //         'less-loader',
+            //     ],
+            //     exclude: /node_modules/
+            // },
             {
                 test: /\.css/,
                 use: [
@@ -173,8 +178,6 @@ module.exports = {
                     }
                 ]
             }
-
-
         ]
     },
     context: __dirname,

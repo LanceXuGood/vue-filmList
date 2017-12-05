@@ -1,27 +1,18 @@
 import Vue from 'vue';
-import Router from 'vue-router';
-import Hello from '@/components/Hello';
-import Home from '@/components/Home';
-import Card from '@/components/Card';
+import VueRouter from 'vue-router';
+import Home from '../pages/home.vue';
+Vue.use(VueRouter);
 
-Vue.use(Router);
+const routes = [{
+        path: '/'
+    },
+    {
+        path: '/home',
+        component: Home
+    }
+];
 
-export default new Router({
-    routes: [
-        {
-            path: '/',
-            name: 'Hello',
-            component: Hello
-        },
-        {
-            path: '/home',
-            name: 'Home',
-            component: Home
-        },
-        {
-            path: '/card',
-            name: 'Card',
-            component: Card
-        }
-    ]
+const router = new VueRouter({
+    routes // （缩写）相当于 routes: routes
 });
+export default router;
