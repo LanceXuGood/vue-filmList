@@ -3,20 +3,14 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
-const isDev = ENV !== 'production';
+const isDev = ENV === 'development';
 console.log(isDev);
-const vendor = [
-    'vue',
-    'vuex',
-    'vux',
-    'history'
-];
 
 module.exports = {
     entry: ['webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:8002', 'babel-polyfill', path.resolve(__dirname, 'src/main.js')],
     devtool: 'source-map',
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
         publicPath: ''
     },
