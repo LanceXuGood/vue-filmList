@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "repository": "https://github.com/LanceXuGood/vue-vux-xy.git",
   "scripts": {
-    "start": "node server.js",
+    "dev": "node server.js",
     "lint": "eslint ./src --ext .js --ext .vue --cache",
     "build-dev": "webpack --config webpack.config.js --progress --colors -p",
-    "build-pro": "webpack --config webpack.config.build.js --progress --colors -p",
+    "build": "webpack --config webpack.config.build.js --progress --colors -p",
     "test-build": "node app.js"
   },
   "author": "",
