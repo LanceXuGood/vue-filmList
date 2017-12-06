@@ -10,6 +10,9 @@
                 <p class="tags">
                     <span v-for="(tag,index) in item.genres" :key="index" class="tag">{{tag}}</span>
                 </p>
+                <p class="durations">
+                    <span v-for="(duration,index) in item.durations" :key="index" class="duration">{{duration}}{{index===item.durations.length-1?'':'/'}}</span>
+                </p>
                 <div class="directors">
                     <span>编剧：</span><a v-for="(director,index) in item.directors" :key="index" :href="director.alt">{{director.name}}{{index===item.directors.length-1?'...':'/'}}</a>
                 </div>
@@ -36,7 +39,7 @@
         },
         methods: {
             format(value) {
-                if (value.length > 6) {
+                if (value.length > 10) {
                     let va = value.substring(0, 6);
                     return `${va}...`
                 } else {
@@ -72,7 +75,7 @@
                 .title {
                     text-align: left;
                     .title-info {
-                        font-size: 26px;
+                        font-size: 30px;
                         span {
                             font-weight: bold;
                             color: #494949;
@@ -80,24 +83,33 @@
                     }
                 }
                 .tags {
-                    text-align: right;
+                    text-align: left;
                     span {
                         font-size: 20px;
                         display: inline-block;
-                        padding: 5px;
+                        margin: 5px;
                         border-color: #e3f1ed;
                         background-color: #f2f8f2;
+                        color: #4f946e;
+                    }
+                }
+                .durations{
+                    text-align: left;
+                    span {
+                        font-size: 20px;
+                        display: inline-block;
+                        margin: 5px;
                         color: #4f946e;
                     }
                 }
                 .casts,
                 .directors {
                     span {
-                        font-size: 24px;
+                        font-size: 20px;
                     }
                     text-align: left;
                     a {
-                        font-size: 24px;
+                        font-size: 20px;
                     }
                 }
             }

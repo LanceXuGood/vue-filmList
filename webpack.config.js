@@ -7,7 +7,7 @@ const isDev = ENV === 'development';
 console.log(isDev);
 
 module.exports = {
-    entry: ['webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:8002', 'babel-polyfill', path.resolve(__dirname, 'src/main.js')],
+    entry: ['webpack/hot/only-dev-server', 'webpack-dev-server/client?http://0.0.0.0:8002', 'babel-polyfill', path.resolve(__dirname, 'src/main.js')],
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -25,6 +25,22 @@ module.exports = {
     resolveLoader: {
         alias: {
             'scss-loader': 'sass-loader',
+        },
+    },
+    devServer: {
+        contentBase: path.join(__dirname, "dist"),
+        port: 8002,
+        inline: true,
+        disableHostCheck: true,
+        host: '0.0.0.0',
+        historyApiFallback: true,
+        compress: true,
+        proxy: {
+            '/v2': {
+                target: 'https://api.douban.com/',
+                secure: false,
+                changeOrigin: true
+            }
         },
     },
     module: {
