@@ -31,7 +31,8 @@
                     <span>编剧：</span><a v-for="(director,index) in item.directors" :key="index" :href="director.alt">{{director.name}}{{index===item.directors.length-1?'...':'/'}}</a>
                 </div>
                 <div class="casts">
-                    <span>演员：</span><a v-for="(cast,index) in item.casts" :key="index" :href="cast.alt">{{cast.name}}{{index===item.casts.length-1?'...':'/'}}</a>
+                    <span>演员：</span>
+                    <span><a v-for="(cast,index) in item.casts" :key="index" :href="cast.alt">{{cast.name}}{{index===item.casts.length-1?'...':'/'}}</a></span>
                 </div>
 
             </div>
@@ -156,8 +157,18 @@ export default {
             .directors {
                 text-align: left;
                 a {
-                    font-size: 20px;
+                    font-size: 24px;
                 }
+            }
+            .casts{
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                span:nth-of-type(2){
+                    flex: 1;
+
+                }
+
             }
         }
     }
