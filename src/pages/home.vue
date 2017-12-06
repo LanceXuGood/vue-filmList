@@ -1,7 +1,7 @@
 <template>
     <div class="home-page">
         <h3>{{filmData.title}}</h3>
-        <div v-for="(item,index) in filmData.subjects" :key="index" class="film-item">
+        <div v-for="(item,index) in filmData.subjects" :key="index" class="film-item" @click="jump">
             <div class="left">
                 <img :src="item.images.medium" alt="" class="image">
                 <p class="rating">
@@ -40,10 +40,10 @@
 </template>
 
 <script>
-import { getZhiHuNewsList } from "../common/api/home";
+import { getZhiHuNewsList } from '../common/api/home';
 
 export default {
-    name: "",
+    name: '',
     props: {},
     data() {
         return {
@@ -58,12 +58,15 @@ export default {
             } else {
                 return value;
             }
+        },
+        jump(){
+            this.$router.push('/fileDetail/1');
         }
     },
     async beforeMount() {
         const data = await getZhiHuNewsList({
-            apikey: "0b2bdeda43b5688921839c8ecb20399b",
-            city: "上海",
+            apikey: '0b2bdeda43b5688921839c8ecb20399b',
+            city: '上海',
             start: 0,
             count: 10
         });
