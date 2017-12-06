@@ -1,4 +1,4 @@
-module.exports ={
+{
     // 脚本执行的环境,不同的执行环境有不同的预定义全局变量
     "env": {
         "browser": true,
@@ -6,7 +6,7 @@ module.exports ={
         "node": true
     },
     "plugins": [
-        "vue"
+        "html", "standard", "promise"
     ],
     // 需要同构babel-eslint来解析es7.decorators,es7.classProperties
     "parser": "babel-eslint",
@@ -14,14 +14,8 @@ module.exports ={
     //"extends": "eslint:recommended",
     "extends": [
         "standard",
-        "vue",
         "eslint:recommended"
     ],
-    "globals": {
-        "_": true,
-        "process.env": true,
-        "__DEV__": true
-    },
     // https://github.com/airbnb/javascript
     // "extends": "eslint-config-airbnb",
     // 解析规则,决定ESLint认为哪些是错误
@@ -53,7 +47,6 @@ module.exports ={
             }
         ],
         // 引号 单引号
-
         "quotes": [
             "warn",
             "single"

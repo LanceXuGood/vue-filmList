@@ -16,9 +16,9 @@ instance.interceptors.request.use(function (opts) {
 // Add a response interceptor
 instance.interceptors.response.use(function (response) {
     console.log(response);
-    if(response.status===200){
+    if (response.status === 200) {
         return response.data;
-    }else{
+    } else {
         return Promise.reject(response);
     }
 
