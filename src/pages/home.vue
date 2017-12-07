@@ -1,8 +1,8 @@
 <template>
     <div class="home-page">
         <h3>{{filmData.title}}</h3>
-
-        <router-link tag="div" to="/fileDetail/1" v-for="(item,index) in filmData.subjects" :key="index" class="film-item">
+        <div v-for="(item,index) in filmData.subjects" :key="index" class="film-item">
+            <router-link to="/filmDetail/1">
             <div class="left">
                 <img :src="item.images.medium" alt="" class="image">
                 <p class="rating">
@@ -37,7 +37,9 @@
                 </div>
 
             </div>
-        </router-link>
+            </router-link>
+
+        </div>
     </div>
 </template>
 
@@ -85,14 +87,12 @@ export default {
         padding: 20px 0;
     }
     .film-item {
-        box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
-            0 2px 4px 0 rgba(232, 237, 250, 0.5);
-        padding: 20px;
+        margin-bottom: 20px;
+        >a{
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        margin-bottom: 20px;
         .left {
             margin-right: 20px;
             .rating {
@@ -169,6 +169,11 @@ export default {
 
             }
         }
+        }
+        box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
+            0 2px 4px 0 rgba(232, 237, 250, 0.5);
+        padding: 20px;
+
     }
 }
 </style>
