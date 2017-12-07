@@ -1,7 +1,8 @@
 <template>
     <div class="home-page">
         <h3>{{filmData.title}}</h3>
-        <div v-for="(item,index) in filmData.subjects" :key="index" class="film-item" @click="jump">
+
+        <router-link tag="div" to="/fileDetail/1" v-for="(item,index) in filmData.subjects" :key="index" class="film-item">
             <div class="left">
                 <img :src="item.images.medium" alt="" class="image">
                 <p class="rating">
@@ -36,7 +37,7 @@
                 </div>
 
             </div>
-        </div>
+        </router-link>
     </div>
 </template>
 
@@ -60,9 +61,6 @@ export default {
                 return value;
             }
         },
-        jump(){
-            this.$router.push('/fileDetail/1');
-        }
     },
     async beforeMount() {
         const data = await getZhiHuNewsList({

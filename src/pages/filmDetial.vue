@@ -1,5 +1,5 @@
 <template>
-    <div>1</div>
+    <div>这里是film-detial页面</div>
 </template>
 <script>
 export default {
