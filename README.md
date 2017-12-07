@@ -25,4 +25,5 @@
     * 将主页的film-item剥离
     * 完成Nav组件
     * film-detail页面的实现
+    * 加入loading动画
     
