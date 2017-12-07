@@ -45,6 +45,7 @@
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
     "loadash": "^0.0.1",
+    "mint-ui": "^2.2.12",
     "node-sass": "^4.5.2",
     "normalize.css": "^6.0.0",
     "open-browser-webpack-plugin": "^0.0.4",

@@ -5,10 +5,13 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import './assets/scss/normalize.scss';
+import store from './vuex';
 
-new Vue({
+const VueInit =new Vue({
     el: '#app',
     router,
+    store,
     template: '<App/>',
     components: { App }
 });
+console.log(VueInit);
