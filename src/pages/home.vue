@@ -28,9 +28,9 @@
 <style lang="scss" scoped>
     @import '../assets/scss/variable.scss';
     .home-page {
-        font-size: 34px;
+        @include font-dpr(14px);
         h3 {
-            font-size: 40px;
+            @include font-dpr(40px);
             background-color: #f2f8f2;
             color: $sub-color;
             padding: 20px 0;

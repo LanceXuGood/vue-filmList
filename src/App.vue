@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <header class="top-bar">静静电影网</header>
+        <header class="top-bar">电影网</header>
         <div class="container-scroll">
             <router-view></router-view>
         </div>
@@ -34,8 +34,8 @@
             background: $primary-color;
             line-height: 80px;
             color: #ffffff;
-            font-size: 26px;
             text-align: center;
+             @include font-dpr(20px);
         }
         .container-scroll{
             flex: 1;
