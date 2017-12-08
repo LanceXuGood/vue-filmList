@@ -29,11 +29,11 @@
                     </div>
                     <div class="directors">
                         <span>编剧：</span>
-                        <span><a v-for="(director,index) in item.directors" :key="index" :href="director.alt">{{director.name}}{{index===item.directors.length-1?'...':'/'}}</a></span>
+                        <span><a v-for="(director,index) in item.directors" :key="index" >{{director.name}}{{index===item.directors.length-1?'...':'/'}}</a></span>
                     </div>
                     <div class="casts">
                         <span>演员：</span>
-                        <span><a v-for="(cast,index) in item.casts" :key="index" :href="cast.alt">{{cast.name}}{{index===item.casts.length-1?'...':'/'}}</a></span>
+                        <span><a v-for="(cast,index) in item.casts" :key="index" >{{cast.name}}{{index===item.casts.length-1?'...':'/'}}</a></span>
                     </div>
                 </div>
             </router-link>
@@ -77,15 +77,16 @@
 </script>
 
 <style lang="scss" scoped>
+    @import '../assets/scss/variable.scss';
     .film-item {
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         >a {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             .left {
-                margin-right: 20px;
+                margin-right: 5px;
                 .rating {
                     display: flex;
                     justify-content: center;
@@ -94,13 +95,13 @@
                         display: inline-block;
                         color: rgb(247, 186, 42);
                         .iconfont {
-                            font-size: 26px;
+                            font-size: 16px;
                         }
                     }
                     .tr {
                         transform: translateY(-1px);
                         .iconfont {
-                            font-size: 25px;
+                            font-size: 12px;
                         }
                     }
                     .nofull {
@@ -111,13 +112,13 @@
             .content {
                 flex: 1;
                 >div {
-                    font-size: 24px;
+                    font-size: 12px;
                     text-align: left;
                 }
                 .title {
                     text-align: left;
                     .title-info {
-                        font-size: 30px;
+                        font-size: 16px;
                         span {
                             font-weight: bold;
                             color: #494949;
@@ -131,7 +132,7 @@
                         margin: 5px;
                         border-color: #e3f1ed;
                         background-color: #f2f8f2;
-                        color: #4f946e;
+                        color: $sub-color;
                     }
                 }
                 .durations {
@@ -139,7 +140,7 @@
                     span {
                         display: inline-block;
                         margin: 5px;
-                        color: #4f946e;
+                        color: $sub-color;
                     }
                 }
                 .casts,
@@ -151,7 +152,8 @@
                     span:nth-of-type(2) {
                         flex: 1;
                         a {
-                            font-size: 24px;
+                            display: inline-block;
+                            font-size: 12px;
                         }
                     }
                 }
@@ -159,6 +161,6 @@
         }
         box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
         0 2px 4px 0 rgba(232, 237, 250, 0.5);
-        padding: 20px;
+        padding: 5px;
     }
 </style>

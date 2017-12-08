@@ -1,6 +1,5 @@
 <template>
     <div class="home-page">
-        <h3>{{filmData.title}}</h3>
         <HomeListItem></HomeListItem>
     </div>
 </template>
@@ -27,13 +26,14 @@
 </script>
 
 <style lang="scss" scoped>
+    @import '../assets/scss/variable.scss';
     .home-page {
         font-size: 34px;
         h3 {
-            font-size: 40px;
+            font-size: 16px;
             background-color: #f2f8f2;
-            color: #4f946e;
-            padding: 20px 0;
+            color: $sub-color;
+            padding: 5px 0;
         }
 
     }

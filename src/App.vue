@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <header class="top-bar"></header>
+        <header class="top-bar">静静电影网</header>
         <div class="container-scroll">
             <router-view></router-view>
         </div>
@@ -13,6 +13,7 @@
 </script>
 <style lang="scss">
 @import './assets/scss/index.scss';
+@import './assets/scss/variable.scss';
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -29,8 +30,12 @@
         display: flex;
         flex-direction: column;
         .top-bar{
-            height: 80px;
-            background: lightgreen;
+            height: 40px;
+            background: $primary-color;
+            line-height: 40px;
+            color: #ffffff;
+            font-size: 16px;
+            text-align: center;
         }
         .container-scroll{
             flex: 1;
