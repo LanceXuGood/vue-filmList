@@ -29,7 +29,6 @@
     @import '../assets/scss/variable.scss';
     .home-page {
         font-size: 34px;
-        background: $primary-color;
         h3 {
             font-size: 16px;
             background-color: #f2f8f2;
