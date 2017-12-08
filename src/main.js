@@ -12,4 +12,4 @@ new Vue({
     template: '<App/>',
     components: { App }
 });
-if(document.body.clientWidth===640 &&  window.devicePixelRatio===2 )document.querySelector('html').style.fontSize = '85px';
+
