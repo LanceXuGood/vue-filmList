@@ -30,11 +30,11 @@
         display: flex;
         flex-direction: column;
         .top-bar{
-            height: 40px;
+            height: 80px;
             background: $primary-color;
-            line-height: 40px;
+            line-height: 80px;
             color: #ffffff;
-            font-size: 16px;
+            font-size: 26px;
             text-align: center;
         }
         .container-scroll{

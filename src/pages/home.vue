@@ -30,10 +30,10 @@
     .home-page {
         font-size: 34px;
         h3 {
-            font-size: 16px;
+            font-size: 40px;
             background-color: #f2f8f2;
             color: $sub-color;
-            padding: 5px 0;
+            padding: 20px 0;
         }
 
     }

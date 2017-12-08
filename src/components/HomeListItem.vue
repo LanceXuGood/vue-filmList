@@ -78,14 +78,14 @@
 <style lang="scss" scoped>
     @import '../assets/scss/variable.scss';
     .film-item {
-        margin-bottom: 5px;
+        margin-bottom: 20px;
         >a {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             .left {
-                margin-right: 5px;
+                margin-right: 20px;
                 .rating {
                     display: flex;
                     justify-content: center;
@@ -94,13 +94,13 @@
                         display: inline-block;
                         color: rgb(247, 186, 42);
                         .iconfont {
-                            font-size: 16px;
+                            font-size: 26px;
                         }
                     }
                     .tr {
                         transform: translateY(-1px);
                         .iconfont {
-                            font-size: 12px;
+                            font-size: 25px;
                         }
                     }
                     .nofull {
@@ -111,13 +111,13 @@
             .content {
                 flex: 1;
                 >div {
-                    font-size: 12px;
+                    font-size: 24px;
                     text-align: left;
                 }
                 .title {
                     text-align: left;
                     .title-info {
-                        font-size: 16px;
+                        font-size: 30px;
                         span {
                             font-weight: bold;
                             color: #494949;
@@ -161,6 +161,6 @@
         }
         box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
         0 2px 4px 0 rgba(232, 237, 250, 0.5);
-        padding: 5px;
+        padding: 20px;
     }
 </style>
