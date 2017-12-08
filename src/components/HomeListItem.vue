@@ -6,14 +6,14 @@
                     <img :src="item.images.medium" alt="" class="image">
                     <p class="rating">
                         <span v-for="itemR in (Math.floor(item.rating.average/2))" :key="itemR" class="trfull">
-                                        <i class="iconfont">&#xe630;</i>
-                                    </span>
+                                    <i class="iconfont">&#xe630;</i>
+                                </span>
                         <span v-if="String(item.rating.average/2).indexOf('.')>-1 ">
-                                        <i class="iconfont">&#xe61a;</i>
-                                    </span>
+                                    <i class="iconfont">&#xe61a;</i>
+                                </span>
                         <span v-for="itemR in 5-Math.ceil(item.rating.average/2)" :key="itemR" class="tr nofull">
-                                        <i class="iconfont">&#xe630;</i>
-                                    </span>
+                                    <i class="iconfont">&#xe630;</i>
+                                </span>
                     </p>
                 </div>
                 <div class="content">
@@ -28,8 +28,12 @@
                         <span v-for="(duration,index) in item.durations" :key="index" class="duration">{{duration}}{{index===item.durations.length-1?'':'/'}}</span>
                     </div>
                     <div class="directors">
+<<<<<<< HEAD
                         <span>编剧：</span>
                         <span><a v-for="(director,index) in item.directors" :key="index" >{{director.name}}{{index===item.directors.length-1?'...':'/'}}</a></span>
+=======
+                        <span>编剧：</span><a v-for="(director,index) in item.directors" :key="index" :href="director.alt">{{director.name}}{{index===item.directors.length-1?'...':'/'}}</a>
+>>>>>>> parent of 0d1cddc... 优化
                     </div>
                     <div class="casts">
                         <span>演员：</span>
@@ -43,7 +47,7 @@
 
 <script>
     import {
-        getDouBanFilmList
+        getZhiHuNewsList
     } from '../common/api/home';
     export default {
         name: '',
@@ -64,7 +68,7 @@
             },
         },
         async beforeMount() {
-            const data = await getDouBanFilmList({
+            const data = await getZhiHuNewsList({
                 apikey: '0b2bdeda43b5688921839c8ecb20399b',
                 city: '上海',
                 start: 0,
@@ -145,16 +149,24 @@
                 }
                 .casts,
                 .directors {
-                    display: flex;
                     text-align: left;
+                    a {
+                        font-size: 24px;
+                    }
+                }
+                .casts {
+                    display: flex;
                     justify-content: flex-start;
                     align-items: flex-start;
                     span:nth-of-type(2) {
                         flex: 1;
+<<<<<<< HEAD
                         a {
                             display: inline-block;
                             font-size: 12px;
                         }
+=======
+>>>>>>> parent of 0d1cddc... 优化
                     }
                 }
             }

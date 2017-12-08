@@ -5,16 +5,10 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import './assets/scss/normalize.scss';
-import store from './vuex';
-import MintUI from 'mint-ui';
-import 'mint-ui/lib/style.css';
-Vue.use(MintUI);
 
-const VueInit =new Vue({
+new Vue({
     el: '#app',
     router,
-    store,
     template: '<App/>',
     components: { App }
 });
-console.log(VueInit);
