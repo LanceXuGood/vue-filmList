@@ -57,6 +57,7 @@
             format(value) {
                 if (value.length > 10) {
                     let va = value.substring(0, 6);
+
                     return `${va}...`;
                 } else {
                     return value;
