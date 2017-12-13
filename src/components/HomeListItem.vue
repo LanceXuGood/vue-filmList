@@ -85,6 +85,9 @@ export default {
         align-items: flex-start;
         .left {
             margin-right: 20px;
+            img{
+                width: 270px;
+            }
             .rating {
                 display: flex;
                 justify-content: center;
@@ -110,14 +113,14 @@ export default {
         .content {
             flex: 1;
             > div {
-                @include font-dpr(14px);
+                @include font-dpr(14PX);
                 text-align: left;
                 margin-bottom: 10px;
             }
             .title {
                 text-align: left;
                 .title-info {
-                    @include font-dpr(18px);
+                    @include font-dpr(20PX);
                     span {
                         font-weight: bold;
                         color: #494949;
@@ -128,7 +131,7 @@ export default {
                 text-align: left;
                 span {
                     display: inline-block;
-                    @include font-dpr(14px);
+
                     padding: 5px 10px;
                     margin-right: 10px;
                     border-color: #e3f1ed;
@@ -152,9 +155,6 @@ export default {
                 align-items: flex-start;
                 span:nth-of-type(2) {
                     flex: 1;
-                    a {
-                        @include font-dpr(14px);
-                    }
                 }
             }
         }

@@ -35,7 +35,7 @@
             line-height: 80px;
             color: #ffffff;
             text-align: center;
-             @include font-dpr(20px);
+             @include font-dpr(18PX);
         }
         .container-scroll{
             flex: 1;

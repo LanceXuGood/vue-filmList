@@ -28,13 +28,6 @@
 <style lang="scss" scoped>
     @import '../assets/scss/variable.scss';
     .home-page {
-        @include font-dpr(14px);
-        h3 {
-            @include font-dpr(40px);
-            background-color: #f2f8f2;
-            color: $sub-color;
-            padding: 20px 0;
-        }
-
+        @include font-dpr(16PX);
     }
 </style>
