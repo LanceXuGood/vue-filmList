@@ -11,7 +11,7 @@
     "precommit": "npm run lint"
   },
   "pre-commit": [
-    "precommit" // 与scripts中的脚本名称一一对应
+    "precommit"
   ],
   "author": "",
   "license": "ISC",
