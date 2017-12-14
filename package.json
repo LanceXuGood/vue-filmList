@@ -4,7 +4,8 @@
   "repository": "https://github.com/LanceXuGood/vue-vux-xy.git",
   "scripts": {
     "dev": "webpack-dev-server",
-    "lint": "./node_modules/.bin/eslint ./src --ext .js --ext .vue --cache",
+    "lint": "./node_modules/.bin/eslint ./src --ext .js --ext .vue  --fix",
+    "lintfix": "./node_modules/.bin/eslint ./src --ext .js --ext .vue  --fix",
     "build-dev": "webpack --config webpack.config.js --progress --colors -p",
     "build": "webpack --config webpack.config.build.js --progress --colors -p",
     "test-build": "node app.js",

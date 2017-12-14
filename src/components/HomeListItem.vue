@@ -60,8 +60,8 @@
         },
         async beforeMount() {
             const data = await getZhiHuNewsList({
-                apikey: "0b2bdeda43b5688921839c8ecb20399b",
-                city: "上海",
+                apikey: '0b2bdeda43b5688921839c8ecb20399b',
+                city: '上海',
                 start: 0,
                 count: 10
             });
