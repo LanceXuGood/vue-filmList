@@ -1,16 +1,19 @@
 <template>
     <div class="home-page">
+        <TopBar></TopBar>
         <HomeListItem></HomeListItem>
     </div>
 </template>
 
 <script>
     import HomeListItem from '../components/HomeListItem.vue';
+    import TopBar from '../components/TopBar.vue';
     export default {
         name: '',
         props: {},
         components:{
-            HomeListItem
+            HomeListItem,
+            TopBar
         },
         data() {
             return {

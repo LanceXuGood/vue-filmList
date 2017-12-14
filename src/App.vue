@@ -1,6 +1,5 @@
 <template>
     <div id="app">
-        <header class="top-bar">电影网</header>
         <div class="container-scroll">
             <router-view></router-view>
         </div>
@@ -29,14 +28,7 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        .top-bar{
-            height: 80px;
-            background: $primary-color;
-            line-height: 80px;
-            color: #ffffff;
-            text-align: center;
-             @include font-dpr(18PX);
-        }
+
         .container-scroll{
             flex: 1;
             overflow-y: auto;
