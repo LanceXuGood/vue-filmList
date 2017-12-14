@@ -5,15 +5,10 @@
                 <div class="left">
                     <img :src="item.images.medium" alt="" class="image">
                     <p class="rating">
-                        <span v-for="itemR in (Math.floor(item.rating.average/2))" :key="itemR" class="tr full">
-                                            <i class="iconfont">&#xe630;</i>
-                                        </span>
-                        <span v-if="String(item.rating.average/2).indexOf('.')>-1 ">
-                                            <i class="iconfont">&#xe61a;</i>
-                                        </span>
-                        <span v-for="itemR in 5-Math.ceil(item.rating.average/2)" :key="itemR" class="tr nofull">
-                                            <i class="iconfont">&#xe630;</i>
-                                        </span>
+                        <span v-for="(itemR,index) in item.rating.averageArr" :key="index" :class="{tr:itemR.star!=='half', full:itemR.star==='full' , none :itemR.star === 'none'}">
+                            <i class="iconfont" v-if="itemR.star!=='half'">&#xe630;</i>
+                            <i class="iconfont" v-if="itemR.star==='half'">&#xe61a;</i>
+                        </span>
                     </p>
                 </div>
                 <div class="content">
@@ -105,6 +100,7 @@
                 }
             });
             console.log(data);
+
             this.filmData = data;
         },
         mounted() {}
@@ -142,7 +138,7 @@
                             font-size: 25px;
                         }
                     }
-                    .nofull {
+                    .none {
                         color: darkgray;
                     }
                 }
