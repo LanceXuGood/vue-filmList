@@ -1,13 +1,18 @@
 <template>
     <div id="app">
+        <SlideBar><SlideBar>
         <div class="container-scroll">
             <router-view></router-view>
         </div>
     </div>
 </template>
 <script>
+import SlideBar from './components/SlideBar.vue';
     export default {
-        name: 'app'
+        name: 'app',
+        components:{
+            SlideBar
+        }
     };
 </script>
 <style lang="scss">
