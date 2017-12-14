@@ -72,7 +72,7 @@
                 start: 0,
                 count: 10
             });
-            console.log(this.filmData);
+            // console.log(this.filmData);
         }
     };
 </script>
