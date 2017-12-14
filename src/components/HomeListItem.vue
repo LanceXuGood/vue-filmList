@@ -39,7 +39,7 @@
 <script>
     import {
         getZhiHuNewsList
-    } from "../common/api/home";
+    } from '../common/api/home';
     export default {
         name: '',
         props: {},
@@ -68,18 +68,18 @@
             data.subjects.forEach(item => {
                 //9.4 => 4.7 四星半
                 const ratingStar = item.rating.average / 2;
-                item.rating.averageArr = [] ;
+                item.rating.averageArr = [];
                 if (String(ratingStar).indexOf('.') > -1) { //小数
                     for (let a = 1; a <= 5; a++) {
                         if (a < ratingStar) {
                             item.rating.averageArr.push({
                                 star: 'full'
                             });
-                        }else if( a == Math.ceil(ratingStar)) {
+                        } else if (a == Math.ceil(ratingStar)) {
                             item.rating.averageArr.push({
                                 star: 'half'
                             });
-                        }else{
+                        } else {
                             item.rating.averageArr.push({
                                 star: 'none'
                             });
@@ -91,7 +91,7 @@
                             item.rating.averageArr.push({
                                 star: 'full'
                             });
-                        }else{
+                        } else {
                             item.rating.averageArr.push({
                                 star: 'none'
                             });
@@ -100,7 +100,6 @@
                 }
             });
             console.log(data);
-
             this.filmData = data;
         },
         mounted() {}
