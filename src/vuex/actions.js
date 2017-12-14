@@ -46,6 +46,5 @@ export const setHomeState = async ({ commit, state }, payload) => {
             }
         }
     });
-    console.log(data);
     commit(types.HOME, data);
 };

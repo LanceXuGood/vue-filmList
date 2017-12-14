@@ -65,14 +65,17 @@
                 }
             }
         },
-        mounted() {
+        beforeMount(){
             this.setHomeState({
                 apikey: '0b2bdeda43b5688921839c8ecb20399b',
                 city: '上海',
                 start: 0,
                 count: 10
             });
-            // console.log(this.filmData);
+        },
+        mounted() {
+
+
         }
     };
 </script>
