@@ -1,8 +1,13 @@
 <template>
-    <div class="SlideBar">
+    <div class="SlideBar" @click="hideSlide">
         <div class="SlideOver">
              <div class="SlideCon">
-
+                <ul>
+                    <li><a href="">首页<i class="iconfont icon-arrR"></i></a></li>
+                    <li><a href="">影片<i class="iconfont icon-arrR"></i></a></li>
+                    <li><a href="">商城<i class="iconfont icon-arrR"></i></a></li>
+                    <li><a href="">我<i class="iconfont icon-arrR"></i></a></li>
+                </ul>
              </div>
         </div>
     </div>
@@ -15,7 +20,11 @@ export default {
     data() {
         return {};
     },
-    methods: {},
+    methods: {
+       hideSlide(){
+           this.$emit('slideHide');
+       }
+    },
     mounted() {}
 };
 </script>
@@ -43,11 +52,29 @@ export default {
                 position: absolute;
                 display: block;
                 top: 0;
-                right: 180px;
+                right: 220px;
                 bottom: 0;
                 left: 0;
+                li{
+                    line-height: 80px;
+                    a{
+                        display: block;
+                        width: 100%;
+                        padding: 10px 28px;
+                        font-size: 28px;
+                        color:#9a9a9a;
+                        text-align: left;
+                        border-bottom: 1px dotted #333;
+
+                        .icon-arrR{
+                            float: right;
+                        }
+                    }
+                }
             }
 
         }
      }
+
+
 </style>

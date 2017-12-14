@@ -1,11 +1,12 @@
 <template>
     <div class="TopBar">
-        <i class="iconfont icon-nav"></i>
+        <i @click="showSlide" class="iconfont icon-nav"></i>
         <p>在线影片</p>
         <i class="iconfont icon-wo"></i>
     </div>
 </template>
 <script>
+import Bus from '../bus';
 // 头部导航组件
 export default {
     name: 'TopBar',
@@ -13,7 +14,11 @@ export default {
     data() {
         return {};
     },
-    methods: {},
+    methods: {
+        showSlide(){
+             Bus.$emit('slideShow' );
+        }
+    },
     mounted() {}
 };
 </script>

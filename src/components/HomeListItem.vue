@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="HomeList">
         <div v-for="(item,index) in filmData.subjects" :key="item.id" class="film-item">
             <router-link to="/filmDetail/1">
                 <div class="left">
@@ -109,6 +109,7 @@
     @import "../assets/scss/variable.scss";
     .film-item {
         margin-bottom: 20px;
+
         >a {
             width: 100%;
             display: flex;
@@ -193,4 +194,8 @@
         0 2px 4px 0 rgba(232, 237, 250, 0.5);
         padding: 20px;
     }
+
+    .HomeList{
+            margin-top: 90px;
+        }
 </style>
