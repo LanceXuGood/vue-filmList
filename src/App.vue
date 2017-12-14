@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <SlideBar><SlideBar>
+        <SlideBar></SlideBar>
         <div class="container-scroll">
             <router-view></router-view>
         </div>
@@ -10,7 +10,7 @@
 import SlideBar from './components/SlideBar.vue';
     export default {
         name: 'app',
-        components:{
+        component:{
             SlideBar
         }
     };
