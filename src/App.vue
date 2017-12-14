@@ -6,14 +6,33 @@
         </div>
     </div>
 </template>
+
 <script>
+    import {
+        mapGetters,
+        mapActions
+    } from 'vuex';
     export default {
-        name: 'app'
+        name: 'app',
+        computed: mapGetters({
+            getTestState: 'getTestState'
+        }),
+        methods: {
+            ...mapActions([
+                'setTestState',
+            ])
+        },
+        mounted(){
+            this.setTestState({
+                msg:'2'
+            });
+        }
     };
 </script>
+
 <style lang="scss">
-@import './assets/scss/index.scss';
-@import './assets/scss/variable.scss';
+    @import './assets/scss/index.scss';
+    @import './assets/scss/variable.scss';
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -29,15 +48,15 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        .top-bar{
+        .top-bar {
             height: 80px;
             background: $primary-color;
             line-height: 80px;
             color: #ffffff;
             text-align: center;
-             @include font-dpr(18PX);
+            @include font-dpr(18PX);
         }
-        .container-scroll{
+        .container-scroll {
             flex: 1;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
