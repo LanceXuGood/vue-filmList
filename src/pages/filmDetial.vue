@@ -12,6 +12,7 @@
         props: {},
         data() {
             return {
+                data:{}
             };
         },
         methods: {
@@ -24,7 +25,8 @@
                 start: 0,
                 count: 10
             });
-            console.log(data);
+            this.data = data;
+
         },
         mounted() {}
     };
