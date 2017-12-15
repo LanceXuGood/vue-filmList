@@ -9,23 +9,28 @@
         </div>
     </div>
 </template>
+
 <script>
-import SlideBar from './components/SlideBar.vue';
-import Bus from './bus';
+    import { mapGetters, mapActions } from 'vuex';
+    import SlideBar from './components/SlideBar.vue';
+    import Bus from './bus';
     export default {
         name: 'app',
+        components:{
+            SlideBar
+        },
         data(){
             return {
                 show:false
             }
         },
-        components:{
-            SlideBar
-        },
-       mounted() {
-          Bus.$on('slideShow',this.slideValue);
-       },
-        methods:{
+        computed: mapGetters({
+            getTestState: 'getTestState'
+        }),
+        methods: {
+            ...mapActions([
+                'setTestState',
+            ]),
             slideValue(){
                  this.show = !this.shoe;
             },
@@ -33,13 +38,19 @@ import Bus from './bus';
                 this.show = false;
             }
         },
-
+        mounted(){
+            this.setTestState({
+                msg:'2'
+            });
+            Bus.$on('slideShow',this.slideValue);
+        }
 
     };
 </script>
+
 <style lang="scss">
-@import './assets/scss/index.scss';
-@import './assets/scss/variable.scss';
+    @import './assets/scss/index.scss';
+    @import './assets/scss/variable.scss';
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;

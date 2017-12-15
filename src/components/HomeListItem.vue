@@ -1,7 +1,7 @@
 <template>
     <div class="HomeList">
         <div v-for="(item,index) in filmData.subjects" :key="item.id" class="film-item">
-            <router-link to="/filmDetail/1">
+            <router-link :to="`/filmDetail/${item.id}`">
                 <div class="left">
                     <img :src="item.images.medium" alt="" class="image">
                     <p class="rating">
@@ -38,17 +38,24 @@
 
 <script>
     import {
-        getZhiHuNewsList
-    } from '../common/api/home';
+        mapGetters,
+        mapActions
+    } from 'vuex';
     export default {
         name: '',
         props: {},
         data() {
             return {
-                filmData: {}
+
             };
         },
+        computed: mapGetters({
+            filmData: 'geHomeState'
+        }),
         methods: {
+            ...mapActions([
+                'setHomeState',
+            ]),
             format(value) {
                 if (value.length > 10) {
                     let va = value.substring(0, 6);
@@ -58,50 +65,18 @@
                 }
             }
         },
-        async beforeMount() {
-            const data = await getZhiHuNewsList({
-                apikey: "0b2bdeda43b5688921839c8ecb20399b",
-                city: "上海",
+        beforeMount(){
+            this.setHomeState({
+                apikey: '0b2bdeda43b5688921839c8ecb20399b',
+                city: '上海',
                 start: 0,
                 count: 10
             });
-            data.subjects.forEach(item => {
-                //9.4 => 4.7 四星半
-                const ratingStar = item.rating.average / 2;
-                item.rating.averageArr = [];
-                if (String(ratingStar).indexOf('.') > -1) { //小数
-                    for (let a = 1; a <= 5; a++) {
-                        if (a < ratingStar) {
-                            item.rating.averageArr.push({
-                                star: 'full'
-                            });
-                        } else if (a == Math.ceil(ratingStar)) {
-                            item.rating.averageArr.push({
-                                star: 'half'
-                            });
-                        } else {
-                            item.rating.averageArr.push({
-                                star: 'none'
-                            });
-                        }
-                    }
-                } else { //整数
-                    for (let a = 1; a <= 5; a++) {
-                        if (a <= ratingStar) {
-                            item.rating.averageArr.push({
-                                star: 'full'
-                            });
-                        } else {
-                            item.rating.averageArr.push({
-                                star: 'none'
-                            });
-                        }
-                    }
-                }
-            });
-            this.filmData = data;
         },
-        mounted() {}
+        mounted() {
+
+
+        }
     };
 </script>
 

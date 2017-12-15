@@ -8,14 +8,11 @@ const instance = axios.create({
 });
 // Add a request interceptor
 instance.interceptors.request.use(function (opts) {
-    console.log(opts);
-
     return opts;
 });
 
 // Add a response interceptor
 instance.interceptors.response.use(function (response) {
-    console.log(response);
     if (response.status === 200) {
         return response.data;
     } else {
