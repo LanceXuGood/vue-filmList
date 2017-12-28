@@ -57,7 +57,6 @@ module.exports = {
                         name: 'images/[hash:8].[name].[ext]',
                     }
                 }],
-                exclude: /node_modules/,
             },
             {
                 test: /\.vue$/,
@@ -81,7 +80,6 @@ module.exports = {
                                 },
                                 'sass-loader',
                             ],
-                            exclude: /node_modules/
                         },
                         {
                             test: /\.less/,
@@ -101,7 +99,6 @@ module.exports = {
                                 },
                                 'less-loader',
                             ],
-                            exclude: /node_modules/
                         }
                     ]
                 }
@@ -110,8 +107,7 @@ module.exports = {
                 test: /\.js$/,
                 use: [{
                     loader: 'babel-loader',
-                }],
-                exclude: /node_modules/,
+                }]
             },
             {
                 test: /\.scss/,
@@ -131,7 +127,6 @@ module.exports = {
                     },
                     'sass-loader',
                 ],
-                exclude: /node_modules/
             },
             {
                 test: /\.css/,

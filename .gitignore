@@ -6,4 +6,5 @@ build/**
 *.log
 /.eslintcache
 /.gitattributes
+/dist
 
