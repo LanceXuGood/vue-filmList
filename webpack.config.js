@@ -101,13 +101,15 @@ module.exports = {
                             ],
                         }
                     ]
-                }
+                },
+                exclude: /node_modules/
             },
             {
                 test: /\.js$/,
                 use: [{
                     loader: 'babel-loader',
-                }]
+                }],
+                exclude: /node_modules/
             },
             {
                 test: /\.scss/,
@@ -127,6 +129,7 @@ module.exports = {
                     },
                     'sass-loader',
                 ],
+                exclude: /node_modules/
             },
             {
                 test: /\.css/,
@@ -144,7 +147,8 @@ module.exports = {
                             sourceMap: 'inline',
                         }
                     }
-                ]
+                ],
+                exclude: /node_modules/
             }
         ]
     },
