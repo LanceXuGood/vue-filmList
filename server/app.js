@@ -1,3 +1,5 @@
+
+
 const Koa = require('koa');
 const Router = require('koa-router');
 const staticServer = require('koa-static');
@@ -18,6 +20,7 @@ router.get('/', function (ctx, next) {
 
     });
 });
+// 还要优化很久哈哈，慢慢做把
 router.get('/v2/*', async(ctx, next) => {
     // 处理代理数据
 
