@@ -21,9 +21,9 @@ export default {
         return {};
     },
     methods: {
-       hideSlide(){
-           this.$emit('slideHide');
-       }
+        hideSlide(){
+            this.$emit('slideHide');
+        }
     },
     mounted() {}
 };

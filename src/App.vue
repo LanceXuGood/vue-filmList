@@ -22,7 +22,7 @@
         data(){
             return {
                 show:false
-            }
+            };
         },
         computed: mapGetters({
             getTestState: 'getTestState'
@@ -32,7 +32,7 @@
                 'setTestState',
             ]),
             slideValue(){
-                 this.show = !this.shoe;
+                this.show = !this.shoe;
             },
             Hide(){
                 this.show = false;

@@ -16,7 +16,7 @@ export default {
     },
     methods: {
         showSlide(){
-             Bus.$emit('slideShow' );
+            Bus.$emit('slideShow' );
         }
     },
     mounted() {}
