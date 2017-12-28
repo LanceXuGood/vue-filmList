@@ -7,7 +7,8 @@
     "lint": "./node_modules/.bin/eslint ./src --ext .js --ext .vue  --fix",
     "lintfix": "./node_modules/.bin/eslint ./src --ext .js --ext .vue  --fix",
     "build": "webpack --config webpack.config.build.js --progress --colors -p",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "start": "nohup nodejs server/app.js"
   },
   "pre-commit": [
     "precommit"
