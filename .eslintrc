@@ -60,7 +60,7 @@
         ],
         //不允许有console调试
         "no-console": "warn",
-        "no-alert": "warn",
+        "no-alert": "error",
         // 允许在 case 子句中使用词法声明
         "no-case-declarations": "off",
         "no-class-assign": "off",

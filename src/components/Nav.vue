@@ -1,5 +1,6 @@
 <template>
-  <ul></ul>
+    <ul>
+    </ul>
 </template>
 <script>
 // 头部导航组件

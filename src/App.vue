@@ -1,15 +1,56 @@
 <template>
     <div id="app">
-        <router-view></router-view>
+        <transition name='slide'>
+            <SlideBar v-show="show" @slideHide="Hide"></SlideBar>
+        </transition>
+
+        <div class="container-scroll">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
+
 <script>
+    import { mapGetters, mapActions } from 'vuex';
+    import SlideBar from './components/SlideBar.vue';
+    import Bus from './bus';
     export default {
-        name: 'app'
+        name: 'app',
+        components:{
+            SlideBar
+        },
+        data(){
+            return {
+                show:false
+            };
+        },
+        computed: mapGetters({
+            getTestState: 'getTestState'
+        }),
+        methods: {
+            ...mapActions([
+                'setTestState',
+            ]),
+            slideValue(){
+                this.show = !this.shoe;
+            },
+            Hide(){
+                this.show = false;
+            }
+        },
+        mounted(){
+            this.setTestState({
+                msg:'2'
+            });
+            Bus.$on('slideShow',this.slideValue);
+        }
+
     };
 </script>
-<style>
+
+<style lang="scss">
     @import './assets/scss/index.scss';
+    @import './assets/scss/variable.scss';
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -17,5 +58,31 @@
         text-align: center;
         color: #2c3e50;
         font-size: 12px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .container-scroll{
+            flex: 1;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
     }
+
+     .slide-enter-active ,.slide-leave-active,.slide-enter-active .slidebar_con ,.slide-leave-active .slidebar_con, {
+          transition: all .5s ease;
+        }
+      .slide-enter,.slide-leave{
+         opacity: 0;
+      }
+      .slide-enter .slidebar_con , .slide-leave-active .slidebar_con{
+          transform: translateX(-100%);
+          opacity: 0;
+        }
 </style>
+

@@ -1,6 +1,6 @@
 import http from '../http';
 
-export const getZhiHuNewsList=(params)=>{
+export const getDouBanFilmList=(params)=>{
     return http.get('/movie/in_theaters',{
         ...params
     });

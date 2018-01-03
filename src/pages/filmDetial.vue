@@ -1,24 +1,37 @@
 <template>
-    <div>1</div>
+    <div>
+        这里是film-detial页面</div>
 </template>
+
 <script>
-export default {
-    name: '',
-    props: {},
-    data() {
-        return {
+    import {
+        getDouBanFilmDetail
+    } from '../common/api/filmDetail';
+    export default {
+        name: '',
+        props: {},
+        data() {
+            return {
+                data:{}
+            };
+        },
+        methods: {
+        },
+        async beforeMount() {
+            const id = this.$route.params.id;
+            const data = await getDouBanFilmDetail(id,{
+                apikey: '0b2bdeda43b5688921839c8ecb20399b',
+                city: '上海',
+                start: 0,
+                count: 10
+            });
+            this.data = data;
 
-        };
-    },
-    methods: {
-
-    },
-    beforeMount() {
-
-    },
-    mounted() {}
-};
+        },
+        mounted() {}
+    };
 </script>
+
 <style lang="scss" scoped>
 
 </style>
