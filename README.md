@@ -11,9 +11,12 @@
     yarn install              npm install 
     yarn start                npm start        
 
+    * 注意事项：yarn和npm安装node-sass 有可能会出问题，如果失败请采用 cnpm 安装
+    * 具体node-sass怎么安装上，看命吧！结局方案:https://www.npmjs.com/package/node-gyp
+
+
 # 更改
 
-    * 现在还处在开发阶段，具体想要做什么还没想法， 暂时只是一些假数据。 
     
     * 2017-06-27
         webpack升级3.0
@@ -22,7 +25,7 @@
         修复babel问题，build文件修复
     
     * 2017-12-28
-        重新优化build,将koa集成，服务器部署，通过nginx做的反向代理。
+        重新优化build,将koa集成，服务器部署，通过nginx做的反向代理。数据采用node作为转发层，抓取豆瓣影视的借口获取数据。
 
     * 2017-12-30
         合并dev到master,优化部分代码：完成了film-item的组件
