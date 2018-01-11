@@ -11,7 +11,7 @@
     export default {
         name: '',
         props: {},
-        components:{
+        components: {
             HomeListItem,
             TopBar
         },
@@ -20,10 +20,8 @@
                 filmData: {}
             };
         },
-        methods: {
-        },
-        beforeMount() {
-        },
+        methods: {},
+        beforeMount() {},
         mounted() {}
     };
 </script>
@@ -32,5 +30,12 @@
     @import '../assets/scss/variable.scss';
     .home-page {
         @include font-dpr(16PX);
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
     }
 </style>

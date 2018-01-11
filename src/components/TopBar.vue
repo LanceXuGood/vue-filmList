@@ -1,36 +1,38 @@
 <template>
     <div class="TopBar">
         <i @click="showSlide" class="iconfont icon-nav"></i>
-        <p>在线影片</p>
+        <p>精虫网</p>
         <i class="iconfont icon-wo"></i>
     </div>
 </template>
+
 <script>
-import Bus from '../bus';
-// 头部导航组件
-export default {
-    name: 'TopBar',
-    props: {},
-    data() {
-        return {};
-    },
-    methods: {
-        showSlide(){
-            Bus.$emit('slideShow' );
-        }
-    },
-    mounted() {}
-};
+    import Bus from '../bus';
+    // 头部导航组件
+    export default {
+        name: 'TopBar',
+        props: {},
+        data() {
+            return {};
+        },
+        methods: {
+            showSlide() {
+                Bus.$emit('slideShow');
+            }
+        },
+        mounted() {}
+    };
 </script>
+
 <style lang="scss" scoped>
-@import '../assets/scss/index.scss';
-@import '../assets/scss/variable.scss';
- .TopBar{
-        position: fixed;
-        z-index: 500;
-        top: 0;
-        right: 0;
-        left: 0;
+    @import '../assets/scss/index.scss';
+    @import '../assets/scss/variable.scss';
+    .TopBar {
+        // position: fixed;
+        // z-index: 500;
+        // top: 0;
+        // right: 0;
+        // left: 0;
         // width: 100%;
         padding: 0px 30px;
         height: 80px;
@@ -38,24 +40,14 @@ export default {
         background: $primary-color;
         line-height: 80px;
         color: #999;
-        font-size: 26px;
-        // @include font-dpr(18PX);
-        .iconfont{
-            font-size: 34px;
+        @include font-dpr(16PX);
+        display: flex;
+        .iconfont {
+            @include font-dpr(16PX);
         }
-        .icon-nav{
-            float: left;
-            margin-right: 40px;
-        }
-        p{
-            float: left;
+        p {
+            flex: 1;
             color: #fff;
         }
-        .icon-wo{
-            float: right;;
-        }
-
- }
-
-
+    }
 </style>
