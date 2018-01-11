@@ -11,6 +11,7 @@ export const setTestState = ({ commit, state }, payload) => {
 };
 
 export const setHomeState = async ({ commit, state }, payload) => {
+    commit(types.HOME, {});
     const data  = await Api.getDouBanFilmList(payload);
     data.subjects.forEach(item => {
         //9.4 => 4.7 四星半
@@ -46,5 +47,6 @@ export const setHomeState = async ({ commit, state }, payload) => {
             }
         }
     });
+
     commit(types.HOME, data);
 };

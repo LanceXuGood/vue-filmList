@@ -1,6 +1,6 @@
 <template>
-    <div class="HomeList">
-        <div v-for="(item,index) in filmData.subjects" :key="item.id" class="film-item">
+    <div class="HomeList" ref="list">
+        <div v-for="(item,index) in home.flimListData.subjects" :key="item.id" class="film-item">
             <router-link :to="`/filmDetail/${item.id}`">
                 <div class="left">
                     <img :src="item.images.medium" alt="" class="image">
@@ -45,10 +45,12 @@
         name: '',
         props: {},
         data() {
-            return {};
+            return {
+
+            };
         },
         computed: mapGetters({
-            filmData: 'geHomeState'
+            home: 'geHomeState'
         }),
         methods: {
             ...mapActions([
@@ -61,17 +63,40 @@
                 } else {
                     return value;
                 }
-            }
+            },
+
         },
         beforeMount() {
+
             this.setHomeState({
                 apikey: '0b2bdeda43b5688921839c8ecb20399b',
                 city: '上海',
                 start: 0,
-                count: 10
+                count: 5,
             });
         },
-        mounted() {}
+        mounted() {
+            const dom = this.$refs.list;
+
+            dom.onscroll = (e)=>{
+                const scrollHeight = dom.scrollHeight;
+                const height = dom.clientHeight;
+                const scrollTop = dom.scrollTop;
+                if(scrollHeight-height -scrollTop <20 && !this.home.isLoading){
+                    let count = this.home.flimListData.count;
+                    count+=5;
+                    this.setHomeState({
+                        apikey: '0b2bdeda43b5688921839c8ecb20399b',
+                        city: '上海',
+                        start: 0,
+                        count
+                    });
+
+                }
+
+
+            }
+        }
     };
 </script>
 
