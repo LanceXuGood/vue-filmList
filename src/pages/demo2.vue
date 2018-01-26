@@ -13,12 +13,12 @@
 <script>
     import {
         mapGetters
-    } from "vuex";
+    } from 'vuex';
     export default {
-        name: "",
+        name: '',
         props: {},
         computed: mapGetters({
-            sdfasf: "getD1State"
+            sdfasf: 'getD1State'
         }),
         components: {},
         data() {
@@ -29,7 +29,7 @@
         methods: {},
         beforeMount() {},
         mounted() {
-            console.log(this.$route)
+            console.log(this.$route);
         }
     };
 </script>

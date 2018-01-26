@@ -7,23 +7,23 @@
 
 <script>
 export default {
-  name: "",
-  props: {},
-  components: {},
-  data() {
-    return {
-      filmData: {}
-    };
-  },
-  methods: {
-    doSomethingElse(e) {
-      const data = new FormData();
-      data.append("123", "234");
-      data.get("123");
-    }
-  },
-  beforeMount() {},
-  mounted() {}
+    name: '',
+    props: {},
+    components: {},
+    data() {
+        return {
+            filmData: {}
+        };
+    },
+    methods: {
+        doSomethingElse(e) {
+            const data = new FormData();
+            data.append('123', '234');
+            data.get('123');
+        }
+    },
+    beforeMount() {},
+    mounted() {}
 };
 </script>
 

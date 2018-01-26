@@ -76,7 +76,7 @@
             });
         },
         mounted() {
-            console.log(this)
+            console.log(this);
             const dom = this.$refs.list;
 
             dom.onscroll = (e)=>{

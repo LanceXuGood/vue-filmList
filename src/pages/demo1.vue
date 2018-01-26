@@ -10,32 +10,32 @@
 </template>F
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
 export default {
-  name: "",
-  props: {},
-  computed: mapGetters({
-    sdfasf: "getD1State"
-  }),
-  components: {},
-  data() {
-    return {
-      demo1: []
-    };
-  },
-  methods: {
-    ...mapActions(["setD1State"]),
-    goToDemo2(params){
-        console.log(event.target)
+    name: '',
+    props: {},
+    computed: mapGetters({
+        sdfasf: 'getD1State'
+    }),
+    components: {},
+    data() {
+        return {
+            demo1: []
+        };
+    },
+    methods: {
+        ...mapActions(['setD1State']),
+        goToDemo2(params){
+            console.log(event.target);
         // this.$router.push({ path: '/demo2', query: item})
         // router组件.route当前页面的路由
+        }
+    },
+    beforeMount() {},
+    mounted() {
+
+
     }
-  },
-  beforeMount() {},
-  mounted() {
-
-
-  }
 };
 </script>
 
