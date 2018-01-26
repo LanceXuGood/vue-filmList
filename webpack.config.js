@@ -69,7 +69,7 @@ module.exports = {
                                 {
                                     loader: 'css-loader',
                                     options: {
-                                        importLoaders: 1,
+                                        importLoaders: 2,
                                     }
                                 },
                                 {
@@ -88,7 +88,7 @@ module.exports = {
                                 {
                                     loader: 'css-loader',
                                     options: {
-                                        importLoaders: 1,
+                                        importLoaders: 2,
                                     }
                                 },
                                 {
@@ -118,7 +118,7 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            importLoaders: 1,
+                            importLoaders: 2,
                         }
                     },
                     {
@@ -138,7 +138,7 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            importLoaders: 1,
+                            importLoaders: 2,
                         }
                     },
                     {
