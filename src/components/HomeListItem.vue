@@ -76,6 +76,7 @@
             });
         },
         mounted() {
+            console.log(this)
             const dom = this.$refs.list;
 
             dom.onscroll = (e)=>{
@@ -95,7 +96,7 @@
                 }
 
 
-            }
+            };
         }
     };
 </script>

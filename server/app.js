@@ -15,10 +15,7 @@ app.use(staticServer(path.join(__dirname, '../dist')));
 
 
 router.get('/', function (ctx, next) {
-    fs.readFile('index.html', function (err, data) {
-        if (err) throw err;
-
-    });
+    ctx.body = '123';
 });
 // 还要优化很久哈哈，慢慢做把
 router.get('/v2/*', async(ctx, next) => {

@@ -50,3 +50,9 @@ export const setHomeState = async ({ commit, state }, payload) => {
 
     commit(types.HOME, data);
 };
+
+// D1
+export const setD1State = ({ commit, state }, payload) => {
+    console.log('action',payload);
+    commit(types.D1, payload);
+};

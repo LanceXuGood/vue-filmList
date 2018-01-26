@@ -8,6 +8,7 @@ import * as getters from './getters';
 //test 状态管理
 import test from './modules/test';
 import home from './modules/home';
+import D1 from './modules/D1';
 // console log vuex
 import createLogger from 'vuex/dist/logger';
 
@@ -19,7 +20,8 @@ export default new Vuex.Store({
     getters,
     modules: {
         test,
-        home
+        home,
+        D1
     },
     // 是否开启调试模式
     strict: debug,
