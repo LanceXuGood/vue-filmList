@@ -142,7 +142,7 @@ module.exports = {
                     module.resource &&
                     /\.js$/.test(module.resource) &&
                     module.resource.indexOf(
-                        path.join(__dirname, '../node_modules')
+                        path.join(__dirname, './node_modules')
                     ) === 0
                 )
             }
@@ -151,7 +151,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: "manifest",
             minChunks: Infinity
-          }),
+        }),
         new ExtractTextPlugin({
             filename: '[name].[hash:8].css',
             allChunks: true,
