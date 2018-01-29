@@ -6,14 +6,11 @@
     "plugins": [
         "transform-decorators",
         "transform-class-properties",
-        [
-            "component",
-            [
-                {
-                    "libraryName": "mint-ui",
-                    "style": true
-                }
-            ]
+        "syntax-dynamic-import", [
+            "component", [{
+                "libraryName": "mint-ui",
+                "style": true
+            }]
         ]
     ]
 }

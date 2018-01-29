@@ -37,68 +37,65 @@
 </template>
 
 <script>
-    import {
-        mapGetters,
-        mapActions
-    } from 'vuex';
-    export default {
-        name: '',
-        props: {},
-        data() {
-            return {
+import {
+    mapGetters,
+    mapActions
+} from 'vuex';
+export default {
+    name: '',
+    props: {},
+    data() {
+        return {
 
-            };
+        };
+    },
+    computed: mapGetters({
+        home: 'geHomeState'
+    }),
+    methods: {
+        ...mapActions([
+            'setHomeState',
+        ]),
+        format(value) {
+            if (value.length > 10) {
+                let va = value.substring(0, 6);
+                return `${va}...`;
+            } else {
+                return value;
+            }
         },
-        computed: mapGetters({
-            home: 'geHomeState'
-        }),
-        methods: {
-            ...mapActions([
-                'setHomeState',
-            ]),
-            format(value) {
-                if (value.length > 10) {
-                    let va = value.substring(0, 6);
-                    return `${va}...`;
-                } else {
-                    return value;
-                }
-            },
 
-        },
-        beforeMount() {
+    },
+    beforeMount() {
 
-            this.setHomeState({
-                apikey: '0b2bdeda43b5688921839c8ecb20399b',
-                city: '上海',
-                start: 0,
-                count: 5,
-            });
-        },
-        mounted() {
-            console.log(this);
-            const dom = this.$refs.list;
+        this.setHomeState({
+            apikey: '0b2bdeda43b5688921839c8ecb20399b',
+            city: '上海',
+            start: 0,
+            count: 5,
+        });
+    },
+    mounted() {
 
-            dom.onscroll = (e)=>{
-                const scrollHeight = dom.scrollHeight;
-                const height = dom.clientHeight;
-                const scrollTop = dom.scrollTop;
-                if(scrollHeight-height -scrollTop <20 && !this.home.isLoading){
-                    let count = this.home.flimListData.count;
-                    count+=5;
-                    this.setHomeState({
-                        apikey: '0b2bdeda43b5688921839c8ecb20399b',
-                        city: '上海',
-                        start: 0,
-                        count
-                    });
+        const dom = this.$refs.list;
+        dom.onscroll = (e)=>{
+            const scrollHeight = dom.scrollHeight;
+            const height = dom.clientHeight;
+            const scrollTop = dom.scrollTop;
+            if(scrollHeight-height -scrollTop <20 && !this.home.isLoading){
+                let count = this.home.flimListData.count;
+                count+=5;
+                this.setHomeState({
+                    apikey: '0b2bdeda43b5688921839c8ecb20399b',
+                    city: '上海',
+                    start: 0,
+                    count
+                });
 
-                }
-
-
-            };
-        }
-    };
+            }
+        };
+    }
+};
 </script>
 
 <style lang="scss" scoped>

@@ -11,8 +11,10 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import mix from '../common/mixins';
 export default {
     name: '',
+    mixins:[mix],
     props: {},
     computed: mapGetters({
         sdfasf: 'getD1State'
@@ -20,7 +22,7 @@ export default {
     components: {},
     data() {
         return {
-            demo1: []
+            demo1: [1,23]
         };
     },
     methods: {
@@ -33,8 +35,8 @@ export default {
     },
     beforeMount() {},
     mounted() {
-
-
+        this.foo();
+        console.log(this);
     }
 };
 </script>
