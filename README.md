@@ -12,7 +12,7 @@
     yarn start                npm start        
 
     * 注意事项：yarn和npm安装node-sass 有可能会出问题，如果失败请采用 cnpm 安装
-    * 具体node-sass怎么安装上，看命吧！结局方案:https://www.npmjs.com/package/node-gyp
+    * 具体node-sass怎么安装上，看命吧！解决方案:[https://www.npmjs.com/package/node-gyp]
 
 
 # 更改
