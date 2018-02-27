@@ -6,6 +6,7 @@ const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
 const isDev = ENV === 'development';
 console.log(isDev);
 
+
 module.exports = {
     entry: ['webpack/hot/only-dev-server', 'webpack-dev-server/client?http://0.0.0.0:8002', 'babel-polyfill', path.resolve(__dirname, 'src/main.js')],
     devtool: 'source-map',
