@@ -1,6 +1,6 @@
 <template>
     <div class="HomeList" ref="list">
-        <div v-for="(item) in home.flimListData.subjects" :key="item.id" class="film-item">
+        <div v-for="(item,index) in home.flimListData.subjects" :key="item.id" class="film-item">
             <router-link :to="`/filmDetail/${item.id}`">
                 <div class="left">
                     <img :src="item.images.medium" alt="" class="image">
