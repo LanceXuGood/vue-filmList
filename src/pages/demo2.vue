@@ -37,6 +37,6 @@
 <style lang="scss" scoped>
     @import "../assets/scss/variable.scss";
     .demo2-page {
-        @include font-dpr(18px);
+        font-size: 18px;
     }
 </style>

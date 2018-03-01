@@ -30,6 +30,6 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/scss/variable.scss";
 .test-page {
-  @include font-dpr(16px);
+  font-size: 16px;
 }
 </style>

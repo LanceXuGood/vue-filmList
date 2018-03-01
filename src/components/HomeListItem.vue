@@ -137,14 +137,14 @@
             .content {
                 flex: 1;
                 >div {
-                    @include font-dpr(14px);
+                    font-size: 14px;
                     text-align: left;
                     margin-bottom: 10px;
                 }
                 .title {
                     text-align: left;
                     .title-info {
-                        @include font-dpr(16px);
+                        font-size: 38px;
                         span {
                             font-weight: bold;
                             color: #494949;
@@ -194,7 +194,7 @@
     .tipText {
         color: #494949;
         height: 60px;
-        @include font-dpr(16px);
+        font-size: 16px;
         line-height: 60px;
     }
     .fade-enter-active,

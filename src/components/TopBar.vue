@@ -40,10 +40,10 @@
         background: $primary-color;
         line-height: 80px;
         color: #999;
-        @include font-dpr(16PX);
+        font-size: 16px;
         display: flex;
         .iconfont {
-            @include font-dpr(16PX);
+            font-size: 16px;
         }
         p {
             flex: 1;

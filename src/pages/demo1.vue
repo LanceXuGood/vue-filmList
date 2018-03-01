@@ -44,6 +44,6 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/scss/variable.scss";
 .demo1-page {
-  @include font-dpr(18px);
+  font-size: 18px;
 }
 </style>
