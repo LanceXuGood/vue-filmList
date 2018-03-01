@@ -1,7 +1,7 @@
 <template>
     <div class="TopBar">
         <i @click="showSlide" class="iconfont icon-nav"></i>
-        <p>精虫网</p>
+        <p>取名字好难啊！</p>
         <i class="iconfont icon-wo"></i>
     </div>
 </template>
@@ -40,14 +40,15 @@
         background: $primary-color;
         line-height: 80px;
         color: #999;
-        @include font-dpr(16PX);
+        @include font-dpr(18PX);
         display: flex;
         .iconfont {
-            @include font-dpr(16PX);
+            @include font-dpr(18PX);
         }
         p {
             flex: 1;
             color: #fff;
+            @include font-dpr(20PX);
         }
     }
 </style>
