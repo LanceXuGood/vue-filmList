@@ -1,7 +1,7 @@
 <template>
     <div class="TopBar">
         <i @click="showSlide" class="iconfont icon-nav"></i>
-        <p>取名字好难啊！</p>
+        <p>延兵厨艺</p>
         <i class="iconfont icon-wo"></i>
     </div>
 </template>
