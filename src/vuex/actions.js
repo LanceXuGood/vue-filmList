@@ -11,8 +11,10 @@ export const setTestState = ({ commit, state }, payload) => {
 };
 
 export const setHomeState = async ({ commit, state }, payload) => {
+    // 触发loading,
     commit(types.HOME, {});
     const data  = await Api.getDouBanFilmList(payload);
+    // 请求成功
     data.subjects.forEach(item => {
         //9.4 => 4.7 四星半
         const ratingStar = item.rating.average / 2;

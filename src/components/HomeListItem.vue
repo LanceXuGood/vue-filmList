@@ -1,14 +1,14 @@
 <template>
     <div class="HomeList" ref="list">
-        <div v-for="(item,index) in home.flimListData.subjects" :key="item.id" class="film-item">
+        <div v-for="(item,index) in home.arr" :key="item.id" class="film-item">
             <router-link :to="`/filmDetail/${item.id}`">
                 <div class="left">
                     <img :src="item.images.medium" alt="" class="image">
                     <p class="rating">
                         <span v-for="(itemR,index) in item.rating.averageArr" :key="index" :class="{tr:itemR.star!=='half', full:itemR.star==='full' , none :itemR.star === 'none'}">
-                                    <i class="iconfont" v-if="itemR.star!=='half'">&#xe630;</i>
-                                    <i class="iconfont" v-if="itemR.star==='half'">&#xe61a;</i>
-                                </span>
+                                                                <i class="iconfont" v-if="itemR.star!=='half'">&#xe630;</i>
+                                                                <i class="iconfont" v-if="itemR.star==='half'">&#xe61a;</i>
+                                                            </span>
                     </p>
                 </div>
                 <div class="content">
@@ -33,69 +33,69 @@
                 </div>
             </router-link>
         </div>
+        <transition name="fade">
+            <p class="tipText" v-show="home.isLoading">正在加载...</p>
+        </transition>
     </div>
 </template>
 
 <script>
-import {
-    mapGetters,
-    mapActions
-} from 'vuex';
-export default {
-    name: '',
-    props: {},
-    data() {
-        return {
-
-        };
-    },
-    computed: mapGetters({
-        home: 'geHomeState'
-    }),
-    methods: {
-        ...mapActions([
-            'setHomeState',
-        ]),
-        format(value) {
-            if (value.length > 10) {
-                let va = value.substring(0, 6);
-                return `${va}...`;
-            } else {
-                return value;
+    import {
+        mapGetters,
+        mapActions
+    } from "vuex";
+    export default {
+        name: "",
+        props: {},
+        data() {
+            return {
+                tipText: "正在加载"
+            };
+        },
+        computed: mapGetters({
+            home: "geHomeState"
+        }),
+        methods: {
+            ...mapActions(["setHomeState"]),
+            format(value) {
+                if (value.length > 10) {
+                    let va = value.substring(0, 6);
+                    return `${va}...`;
+                } else {
+                    return value;
+                }
             }
         },
-
-    },
-    beforeMount() {
-
-        this.setHomeState({
-            apikey: '0b2bdeda43b5688921839c8ecb20399b',
-            city: '上海',
-            start: 0,
-            count: 5,
-        });
-    },
-    mounted() {
-
-        const dom = this.$refs.list;
-        dom.onscroll = (e)=>{
-            const scrollHeight = dom.scrollHeight;
-            const height = dom.clientHeight;
-            const scrollTop = dom.scrollTop;
-            if(scrollHeight-height -scrollTop <20 && !this.home.isLoading){
-                let count = this.home.flimListData.count;
-                count+=5;
-                this.setHomeState({
-                    apikey: '0b2bdeda43b5688921839c8ecb20399b',
-                    city: '上海',
-                    start: 0,
-                    count
-                });
-
-            }
-        };
-    }
-};
+        beforeMount() {
+            this.setHomeState({
+                apikey: "0b2bdeda43b5688921839c8ecb20399b",
+                city: "上海",
+                start: 0,
+                count: 5
+            });
+        },
+        mounted() {
+            const dom = this.$refs.list;
+            dom.onscroll = e => {
+                const scrollHeight = dom.scrollHeight;
+                const height = dom.clientHeight;
+                const scrollTop = dom.scrollTop;
+                if (scrollHeight - height - scrollTop < 5 && !this.home.isLoading) {
+                    let count = this.home.flimListData.start;
+                    count += 5;
+                    if (count > this.home.flimListData.total) {
+                        return;
+                    }
+                    this.setHomeState({
+                        apikey: "0b2bdeda43b5688921839c8ecb20399b",
+                        city: "上海",
+                        start: count,
+                        count: 5
+                    });
+                }
+            };
+        }
+    };
 </script>
 
 <style lang="scss" scoped>
@@ -137,14 +137,14 @@ export default {
             .content {
                 flex: 1;
                 >div {
-                    @include font-dpr(14PX);
+                    @include font-dpr(14px);
                     text-align: left;
                     margin-bottom: 10px;
                 }
                 .title {
                     text-align: left;
                     .title-info {
-                        @include font-dpr(16PX);
+                        @include font-dpr(16px);
                         span {
                             font-weight: bold;
                             color: #494949;
@@ -189,5 +189,20 @@ export default {
     .HomeList {
         flex: 1;
         overflow-y: auto;
+        position: relative;
+    }
+    .tipText {
+        color: #494949;
+        height: 60px;
+        @include font-dpr(16px);
+        line-height: 60px;
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity 0.2s;
+    }
+    .fade-enter,
+    .fade-leave-to {
+        opacity: 0;
     }
 </style>
