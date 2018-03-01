@@ -13,11 +13,11 @@
     import {
         mapGetters,
         mapActions
-    } from "vuex";
-    import SlideBar from "./components/SlideBar.vue";
-    import Bus from "./bus";
+    } from 'vuex';
+    import SlideBar from './components/SlideBar.vue';
+    import Bus from './bus';
     export default {
-        name: "app",
+        name: 'app',
         components: {
             SlideBar
         },
@@ -27,10 +27,10 @@
             };
         },
         computed: mapGetters({
-            getTestState: "getTestState"
+            getTestState: 'getTestState'
         }),
         methods: {
-            ...mapActions(["setTestState"]),
+            ...mapActions(['setTestState']),
             slideValue() {
                 this.show = !this.shoe;
             },
@@ -40,9 +40,9 @@
         },
         mounted() {
             this.setTestState({
-                msg: "2"
+                msg: '2'
             });
-            Bus.$on("slideShow", this.slideValue);
+            Bus.$on('slideShow', this.slideValue);
         }
     };
 </script>
