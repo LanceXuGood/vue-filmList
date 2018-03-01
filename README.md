@@ -35,7 +35,12 @@
 
     * 2017-12-30
         合并dev到master,优化部分代码：完成了film-item的组件
-                
+
+    * 2017-2-27
+        服务器集成jenkin,自动构建部署（暂时只是github搭建的，晚点会上gitlab,打算拿公司的项目着手）。
+    
+    * 2017-2-27
+        加入lazyload组件。优化部分代码。
                 
 # ToDo
     * 将主页的film-item剥离（Done）
