@@ -3,7 +3,6 @@
         <transition name='slide'>
             <SlideBar v-show="show" @slideHide="Hide"></SlideBar>
         </transition>
-
         <div class="container-scroll">
             <router-view></router-view>
         </div>
@@ -11,48 +10,48 @@
 </template>
 
 <script>
-    import { mapGetters, mapActions } from 'vuex';
-    import SlideBar from './components/SlideBar.vue';
-    import Bus from './bus';
+    import {
+        mapGetters,
+        mapActions
+    } from "vuex";
+    import SlideBar from "./components/SlideBar.vue";
+    import Bus from "./bus";
     export default {
-        name: 'app',
-        components:{
+        name: "app",
+        components: {
             SlideBar
         },
-        data(){
+        data() {
             return {
-                show:false
+                show: false
             };
         },
         computed: mapGetters({
-            getTestState: 'getTestState'
+            getTestState: "getTestState"
         }),
         methods: {
-            ...mapActions([
-                'setTestState',
-            ]),
-            slideValue(){
+            ...mapActions(["setTestState"]),
+            slideValue() {
                 this.show = !this.shoe;
             },
-            Hide(){
+            Hide() {
                 this.show = false;
             }
         },
-        mounted(){
+        mounted() {
             this.setTestState({
-                msg:'2'
+                msg: "2"
             });
-            Bus.$on('slideShow',this.slideValue);
+            Bus.$on("slideShow", this.slideValue);
         }
-
     };
 </script>
 
 <style lang="scss">
-    @import './assets/scss/index.scss';
-    @import './assets/scss/variable.scss';
+    @import "./assets/scss/index.scss";
+    @import "./assets/scss/variable.scss";
     #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        font-family: "Avenir", Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
@@ -66,23 +65,11 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
-
-        .container-scroll{
+        .container-scroll {
             flex: 1;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
     }
-
-     .slide-enter-active ,.slide-leave-active,.slide-enter-active .slidebar_con ,.slide-leave-active .slidebar_con, {
-          transition: all .5s ease;
-        }
-      .slide-enter,.slide-leave{
-         opacity: 0;
-      }
-      .slide-enter .slidebar_con , .slide-leave-active .slidebar_con{
-          transform: translateX(-100%);
-          opacity: 0;
-        }
 </style>
 
