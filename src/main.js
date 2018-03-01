@@ -6,14 +6,17 @@ import App from './App.vue';
 import router from './router';
 // 入口处引入状态
 import store from './vuex';
+import VueLazyload from 'vue-lazyload';
 
 import './assets/scss/normalize.scss';
 
+Vue.use(VueLazyload);
 new Vue({
     el: '#app',
     router,
     store,
     template: '<App/>',
-    components: { App }
+    components: {
+        App
+    }
 });
-

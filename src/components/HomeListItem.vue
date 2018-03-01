@@ -3,7 +3,7 @@
         <div v-for="(item,index) in home.arr" :key="item.id" class="film-item">
             <router-link :to="`/filmDetail/${item.id}`">
                 <div class="left">
-                    <img :src="item.images.medium" alt="" class="image">
+                    <img v-lazy="item.images.medium"  alt="" class="image">
                     <p class="rating">
                         <span v-for="(itemR,index) in item.rating.averageArr" :key="index" :class="{tr:itemR.star!=='half', full:itemR.star==='full' , none :itemR.star === 'none'}">
                                                                 <i class="iconfont" v-if="itemR.star!=='half'">&#xe630;</i>
