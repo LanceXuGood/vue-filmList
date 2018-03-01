@@ -34,7 +34,7 @@
             </router-link>
         </div>
         <transition name="fade">
-            <p class="tipText" v-show="home.isLoading">正在加载...</p>
+            <p class="tipText" v-show="home.isLoading">{{tipText}}</p>
         </transition>
     </div>
 </template>
@@ -49,7 +49,7 @@
         props: {},
         data() {
             return {
-                tipText: '正在加载'
+                tipText: '正在加载...'
             };
         },
         computed: mapGetters({
@@ -102,6 +102,9 @@
     @import "../assets/scss/variable.scss";
     .film-item {
         margin-bottom: 20px;
+        &:last-child{
+            margin-bottom: 0;
+        }
         >a {
             width: 100%;
             display: flex;
@@ -200,6 +203,7 @@
     .fade-enter-active,
     .fade-leave-active {
         transition: opacity 0.2s;
+
     }
     .fade-enter,
     .fade-leave-to {
