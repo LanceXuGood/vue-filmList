@@ -40,15 +40,15 @@
         background: $primary-color;
         line-height: 80px;
         color: #999;
-        @include font-dpr(18PX);
+        @include font-dpr(16px);
         display: flex;
         .iconfont {
-            @include font-dpr(18PX);
+            @include font-dpr(16px);
         }
         p {
             flex: 1;
             color: #fff;
-            @include font-dpr(20PX);
+            @include font-dpr(18px);
         }
     }
 </style>

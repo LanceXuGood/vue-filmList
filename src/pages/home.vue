@@ -29,7 +29,7 @@
 <style lang="scss" scoped>
     @import '../assets/scss/variable.scss';
     .home-page {
-        @include font-dpr(16PX);
+        @include font-dpr(16px);
         position: absolute;
         left: 0;
         top: 0;
