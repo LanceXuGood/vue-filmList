@@ -2,8 +2,8 @@
 
 # 分支说明
     1.dev-flexible 手淘自适应
-    2.dev采用antd高清方案
-    3.dev-vm 采用vm自适应
+    2.dev 采用antd高清方案自适应
+    3.dev-vm 采用vm自适应（具体的参数还未调整，具体什么坑，还没注意到）
 
 # vue + vuex 尝试
     1.尝试构建vue程序
@@ -18,8 +18,9 @@
     yarn start                npm start        
 
     * 注意事项：yarn和npm安装node-sass 有可能会出问题，如果失败请采用 cnpm 安装
-    * 具体node-sass怎么安装上，看命吧！解决方案:https://www.npmjs.com/package/node-gyp
-
+    * 具体node-sass怎么安装上，看命吧！
+    * 解决方案: [node-gyp](https://www.npmjs.com/package/node-gyp)
+    
 
 # 更改
 

@@ -17,7 +17,7 @@ app.use(staticServer(path.join(__dirname, '../dist')));
 router.get('/', function (ctx, next) {
     ctx.body = '123';
 });
-// 还要优化很久哈哈，慢慢做把
+// 还要优化很久哈哈，慢慢做吧！
 router.get('/v2/*', async(ctx, next) => {
     // 处理代理数据
 
