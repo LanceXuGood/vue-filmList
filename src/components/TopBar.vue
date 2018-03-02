@@ -1,7 +1,7 @@
 <template>
     <div class="TopBar">
         <i @click="showSlide" class="iconfont icon-nav"></i>
-        <p>精虫网</p>
+        <p>Lance测试网站</p>
         <i class="iconfont icon-wo"></i>
     </div>
 </template>
@@ -48,6 +48,7 @@
         p {
             flex: 1;
             color: #fff;
+            @include font-dpr(18px);
         }
     }
 </style>

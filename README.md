@@ -1,4 +1,10 @@
 声明：所有的接口都是爬取得豆瓣的电影，该项目只是用来个人练习和学习使用，不涉及任何商用用途。如果侵权，请及时联系本人，本人会尽快删除。
+
+# 分支说明
+    1.dev-flexible 手淘自适应
+    2.dev 采用antd高清方案自适应
+    3.dev-vm 采用vm自适应（具体的参数还未调整，具体什么坑，还没注意到）
+
 # vue + vuex 尝试
     1.尝试构建vue程序
     2.webpack 2.0
@@ -12,8 +18,9 @@
     yarn start                npm start        
 
     * 注意事项：yarn和npm安装node-sass 有可能会出问题，如果失败请采用 cnpm 安装
-    * 具体node-sass怎么安装上，看命吧！解决方案:https://www.npmjs.com/package/node-gyp
-
+    * 具体node-sass怎么安装上，看命吧！
+    * 解决方案: [node-gyp](https://www.npmjs.com/package/node-gyp)
+    
 
 # 更改
 
@@ -29,7 +36,12 @@
 
     * 2017-12-30
         合并dev到master,优化部分代码：完成了film-item的组件
-                
+
+    * 2017-2-27
+        服务器集成jenkin,自动构建部署（暂时只是github搭建的，晚点会上gitlab,打算拿公司的项目着手）。
+    
+    * 2017-2-27
+        加入lazyload组件。优化部分代码。
                 
 # ToDo
     * 将主页的film-item剥离（Done）
