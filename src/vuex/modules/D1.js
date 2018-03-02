@@ -9,7 +9,6 @@ const state = {
 // 根据type 设置当前的D1状态
 const mutations = {
     [types.D1](state, payload) {
-        console.log('state',payload);
         state.D1_data.push(payload);
     }
 };

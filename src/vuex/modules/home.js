@@ -4,9 +4,9 @@ import _ from 'lodash';
 
 // initial state
 const state = {
-    flimListData: {},
-    isLoading: false,
-    arr: []
+    flimListData: {}, //豆瓣数据
+    isLoading: false, //加载状态判定
+    arr: [] // 用来存储数据
 };
 
 // 根据type 设置当前的test状态

@@ -1,6 +1,7 @@
 <template>
-    <div>
-        这里是film-detial页面</div>
+    <div class="filmDetail">
+        <h3>{{filmDetail.title}}</h3>
+    </div>
 </template>
 
 <script>
@@ -12,7 +13,7 @@
         props: {},
         data() {
             return {
-                data:{}
+                filmDetail:{}
             };
         },
         methods: {
@@ -25,10 +26,11 @@
                 start: 0,
                 count: 10
             });
-            this.data = data;
-
+            this.filmDetail = data;
         },
-        mounted() {}
+        mounted() {
+
+        }
     };
 </script>
 
