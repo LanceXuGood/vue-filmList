@@ -66,11 +66,7 @@
                         color: #9a9a9a;
                         text-align: left;
                         border-bottom: 1px dotted #333;
-<<<<<<< HEAD
                         font-size: 16px;
-=======
-                        @include font-dpr(16px);
->>>>>>> master
                         .icon-arrR {
                             float: right;
                         }
