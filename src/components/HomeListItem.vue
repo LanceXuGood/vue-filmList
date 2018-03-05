@@ -100,6 +100,7 @@
 
 <style lang="scss" scoped>
     @import "../assets/scss/variable.scss";
+
     .film-item {
         margin-bottom: 20px;
         &:last-child{

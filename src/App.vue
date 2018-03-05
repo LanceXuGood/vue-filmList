@@ -65,6 +65,7 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        background: resolve('logo.png');
         .container-scroll {
             flex: 1;
             overflow-y: auto;

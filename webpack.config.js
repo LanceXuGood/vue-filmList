@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
 const isDev = ENV === 'development';
 console.log(isDev);
@@ -170,6 +170,12 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
-        new webpack.NamedModulesPlugin()
+        new webpack.NamedModulesPlugin(),
+        new CopyWebpackPlugin([
+            {
+              from: path.resolve(__dirname, './static'),
+              to: 'static',
+            }
+          ])
     ],
 };

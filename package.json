@@ -34,6 +34,7 @@
     "better-scroll": "^1.7.2",
     "body-parser": "^1.18.2",
     "clean-webpack-plugin": "^0.1.17",
+    "copy-webpack-plugin": "^4.5.0",
     "css-loader": "^0.26.1",
     "element-ui": "^1.2.9",
     "es6-promise": "^4.0.5",
