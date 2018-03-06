@@ -98,7 +98,7 @@
     };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     @import "../assets/scss/variable.scss";
 
     .film-item {
@@ -140,10 +140,12 @@
             }
             .content {
                 flex: 1;
+
                 >div {
-                    font-size: 14px;
+
                     text-align: left;
                     margin-bottom: 10px;
+                    font-size: 26px;
                 }
                 .title {
                     text-align: left;
@@ -158,6 +160,7 @@
                 .tags {
                     text-align: left;
                     span {
+
                         display: inline-block;
                         padding: 5px 10px;
                         margin-right: 10px;
@@ -168,6 +171,7 @@
                 }
                 .durations {
                     text-align: left;
+
                     span {
                         display: inline-block;
                         margin: 5px;

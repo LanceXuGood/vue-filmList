@@ -173,8 +173,8 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         new CopyWebpackPlugin([
             {
-              from: path.resolve(__dirname, './static'),
-              to: 'static',
+              from: path.resolve(__dirname, './src/assets'),
+              to: 'assets',
             }
           ])
     ],
