@@ -157,11 +157,11 @@ module.exports = {
     context: __dirname,
     plugins: [
         //new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
-        new HtmlWebpackPlugin({
-            title: '',
-            hash: true,
-            template: path.resolve(__dirname, 'src/index.html')
-        }),
+        // new HtmlWebpackPlugin({
+        //     title: '',
+        //     hash: true,
+        //     template: path.resolve(__dirname, 'src/index.html')
+        // }),
         new webpack.DefinePlugin({
             __DEV__: isDev,
             'process.env': {
