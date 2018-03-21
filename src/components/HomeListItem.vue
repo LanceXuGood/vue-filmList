@@ -1,14 +1,14 @@
 <template>
     <div class="HomeList" ref="list">
-        <div v-for="(item,index) in home.arr" :key="item.id" class="film-item">
+        <div v-for="(item) in home.arr" :key="item.id" class="film-item">
             <router-link :to="`/filmDetail/${item.id}`">
                 <div class="left">
-                    <img v-lazy="item.images.medium"  alt="" class="image">
+                    <img v-lazy="item.images.medium" alt="" class="image">
                     <p class="rating">
                         <span v-for="(itemR,index) in item.rating.averageArr" :key="index" :class="{tr:itemR.star!=='half', full:itemR.star==='full' , none :itemR.star === 'none'}">
-                                                                <i class="iconfont" v-if="itemR.star!=='half'">&#xe630;</i>
-                                                                <i class="iconfont" v-if="itemR.star==='half'">&#xe61a;</i>
-                                                            </span>
+                                                                    <i class="iconfont" v-if="itemR.star!=='half'">&#xe630;</i>
+                                                                    <i class="iconfont" v-if="itemR.star==='half'">&#xe61a;</i>
+                                                                </span>
                     </p>
                 </div>
                 <div class="content">
@@ -43,20 +43,20 @@
     import {
         mapGetters,
         mapActions
-    } from 'vuex';
+    } from "vuex";
     export default {
-        name: '',
+        name: "",
         props: {},
         data() {
             return {
-                tipText: '正在加载...'
+                tipText: "正在加载..."
             };
         },
         computed: mapGetters({
-            home: 'geHomeState'
+            home: "geHomeState"
         }),
         methods: {
-            ...mapActions(['setHomeState']),
+            ...mapActions(["setHomeState"]),
             format(value) {
                 if (value.length > 10) {
                     let va = value.substring(0, 6);
@@ -68,8 +68,8 @@
         },
         beforeMount() {
             this.setHomeState({
-                apikey: '0b2bdeda43b5688921839c8ecb20399b',
-                city: '上海',
+                apikey: "0b2bdeda43b5688921839c8ecb20399b",
+                city: "上海",
                 start: 0,
                 count: 5
             });
@@ -87,8 +87,8 @@
                         return;
                     }
                     this.setHomeState({
-                        apikey: '0b2bdeda43b5688921839c8ecb20399b',
-                        city: '上海',
+                        apikey: "0b2bdeda43b5688921839c8ecb20399b",
+                        city: "上海",
                         start: count,
                         count: 5
                     });
@@ -98,101 +98,92 @@
     };
 </script>
 
-<style lang="scss">
-    @import "../assets/scss/variable.scss";
-
+<style>
+    /* @import url("../assets/scss/variable.css");
     .film-item {
         margin-bottom: 20px;
-        &:last-child{
-            margin-bottom: 0;
-        }
-        >a {
+        box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5);
+        padding: 20px;
+        & > a {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            .left {
+            & .left {
                 margin-right: 20px;
-                img {
+                & img {
                     width: 270px;
                 }
-                .rating {
+                & .rating {
                     display: flex;
                     justify-content: center;
                     align-items: flex-start;
-                    span {
+                    & span {
                         display: inline-block;
                         color: rgb(247, 186, 42);
-                        .iconfont {
+                        & .iconfont {
                             font-size: 26px;
                         }
                     }
-                    .tr {
+                    & .tr {
                         transform: translateY(-1px);
-                        .iconfont {
+                        & .iconfont {
                             font-size: 25px;
                         }
                     }
-                    .none {
+                    & .none {
                         color: darkgray;
                     }
                 }
             }
-            .content {
+            & .content {
                 flex: 1;
-
-                >div {
-
+                &>div {
                     text-align: left;
                     margin-bottom: 10px;
                     font-size: 26px;
                 }
-                .title {
+                & .title {
                     text-align: left;
-                    .title-info {
+                    & .title-info {
                         font-size: 38px;
-                        span {
+                        & span {
                             font-weight: bold;
                             color: #494949;
                         }
                     }
                 }
-                .tags {
+                & .tags {
                     text-align: left;
-                    span {
-
+                    & span {
                         display: inline-block;
                         padding: 5px 10px;
                         margin-right: 10px;
                         border-color: #e3f1ed;
                         background-color: #f2f8f2;
-                        color: $sub-color;
+                        color: var(sub-color);
                     }
                 }
-                .durations {
+                & .durations {
                     text-align: left;
-
-                    span {
+                    & span {
                         display: inline-block;
                         margin: 5px;
-                        color: $sub-color;
+                        color: var(sub-color);
                     }
                 }
-                .casts,
+                & .casts,
                 .directors {
                     text-align: left;
                     display: flex;
                     justify-content: flex-start;
                     align-items: flex-start;
-                    span:nth-of-type(2) {
+                    & span:nth-of-type(2) {
                         flex: 1;
                     }
                 }
             }
         }
-        box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
-        0 2px 4px 0 rgba(232, 237, 250, 0.5);
-        padding: 20px;
     }
     .HomeList {
         flex: 1;
@@ -208,10 +199,9 @@
     .fade-enter-active,
     .fade-leave-active {
         transition: opacity 0.2s;
-
     }
     .fade-enter,
     .fade-leave-to {
         opacity: 0;
-    }
+    } */
 </style>

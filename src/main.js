@@ -8,7 +8,7 @@ import router from './router';
 import store from './vuex';
 import VueLazyload from 'vue-lazyload';
 
-import './assets/scss/normalize.scss';
+
 
 Vue.use(VueLazyload);
 new Vue({

@@ -13,11 +13,11 @@
     import {
         mapGetters,
         mapActions
-    } from 'vuex';
-    import SlideBar from './components/SlideBar.vue';
-    import Bus from './bus';
+    } from "vuex";
+    import SlideBar from "./components/SlideBar.vue";
+    import Bus from "./bus";
     export default {
-        name: 'app',
+        name: "app",
         components: {
             SlideBar
         },
@@ -27,10 +27,10 @@
             };
         },
         computed: mapGetters({
-            getTestState: 'getTestState'
+            getTestState: "getTestState"
         }),
         methods: {
-            ...mapActions(['setTestState']),
+            ...mapActions(["setTestState"]),
             slideValue() {
                 this.show = !this.shoe;
             },
@@ -40,16 +40,17 @@
         },
         mounted() {
             this.setTestState({
-                msg: '2'
+                msg: "2"
             });
-            Bus.$on('slideShow', this.slideValue);
+            Bus.$on("slideShow", this.slideValue);
         }
     };
 </script>
 
-<style lang="scss">
-    @import "./assets/scss/index.scss";
-    @import "./assets/scss/variable.scss";
+<style>
+    @import url("./assets/scss/normalize.css");
+    @import url("./assets/scss/index.css");
+    @import url("./assets/scss/variable.css");
     #app {
         font-family: "Avenir", Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -65,8 +66,7 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        background: resolve('logo.png');
-        .container-scroll {
+        & .container-scroll {
             flex: 1;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
