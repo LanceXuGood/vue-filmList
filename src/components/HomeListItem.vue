@@ -43,20 +43,20 @@
     import {
         mapGetters,
         mapActions
-    } from "vuex";
+    } from 'vuex';
     export default {
-        name: "",
+        name: '',
         props: {},
         data() {
             return {
-                tipText: "正在加载..."
+                tipText: '正在加载...'
             };
         },
         computed: mapGetters({
-            home: "geHomeState"
+            home: 'geHomeState'
         }),
         methods: {
-            ...mapActions(["setHomeState"]),
+            ...mapActions(['setHomeState']),
             format(value) {
                 if (value.length > 10) {
                     let va = value.substring(0, 6);
@@ -68,8 +68,8 @@
         },
         beforeMount() {
             this.setHomeState({
-                apikey: "0b2bdeda43b5688921839c8ecb20399b",
-                city: "上海",
+                apikey: '0b2bdeda43b5688921839c8ecb20399b',
+                city: '上海',
                 start: 0,
                 count: 5
             });
@@ -87,8 +87,8 @@
                         return;
                     }
                     this.setHomeState({
-                        apikey: "0b2bdeda43b5688921839c8ecb20399b",
-                        city: "上海",
+                        apikey: '0b2bdeda43b5688921839c8ecb20399b',
+                        city: '上海',
                         start: count,
                         count: 5
                     });
