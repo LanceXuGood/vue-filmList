@@ -26,8 +26,8 @@
     };
 </script>
 
-<style lang="scss" scoped>
-    @import '../assets/scss/variable.scss';
+<style  scoped>
+    /* @import '../assets/scss/variable.css';
     .home-page {
         font-size: 16px;
         position: absolute;
@@ -37,5 +37,5 @@
         bottom: 0;
         display: flex;
         flex-direction: column;
-    }
+    } */
 </style>

@@ -1,3 +1,5 @@
+// 此Model测试使用
+
 // 获取mutation-type处理对应的state
 import * as types from '../mutation-types';
 

@@ -27,9 +27,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "../assets/scss/variable.scss";
+<style  scoped>
+/* @import "../assets/scss/variable.css";
 .test-page {
   font-size: 16px;
-}
+} */
 </style>

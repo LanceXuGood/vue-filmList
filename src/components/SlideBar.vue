@@ -30,8 +30,8 @@
     };
 </script>
 
-<style lang="scss" scoped>
-    @import '../assets/scss/variable.scss';
+<style  scoped>
+    /* @import '../assets/scss/variable.css';
     .SlideBar {
         position: fixed;
         top: 0;
@@ -40,14 +40,14 @@
         right: 0;
         color: #9a9a9a;
         z-index: 501;
-        .SlideOver {
+        & .SlideOver {
             position: absolute;
             top: 80px;
             left: 0px;
             right: 0px;
             bottom: 0px;
             background: rgba(0, 0, 0, 0.5);
-            .SlideCon {
+            & .SlideCon {
                 border-top: 1px solid #222;
                 box-shadow: 0 1px 1px #363636 inset;
                 background: #282828;
@@ -57,9 +57,9 @@
                 right: 220px;
                 bottom: 0;
                 left: 0;
-                li {
+                & li {
                     line-height: 80px;
-                    a {
+                    & a {
                         display: block;
                         width: 100%;
                         padding: 10px 28px;
@@ -74,5 +74,5 @@
                 }
             }
         }
-    }
+    } */
 </style>

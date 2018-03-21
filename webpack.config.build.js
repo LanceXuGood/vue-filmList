@@ -46,41 +46,6 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
-                options: {
-                    loaders: [{
-                            test: /\.scss/,
-                            use: [
-                                'style-loader',
-                                {
-                                    loader: 'css-loader',
-                                    options: {
-                                        minimize: true,
-                                    }
-                                },
-                                {
-                                    loader: 'postcss-loader',
-                                },
-                                'sass-loader',
-                            ],
-                            exclude: /node_modules/
-                        },
-                        {
-                            test: /\.less/,
-                            use: [
-                                'style-loader',
-                                {
-                                    loader: 'css-loader',
-                                    options: {
-                                        minimize: true,
-                                    }
-                                },
-                                'postcss-loader',
-                                'less-loader',
-                            ],
-                            exclude: /node_modules/
-                        }
-                    ]
-                }
             },
             {
                 test: /\.js$/,
@@ -88,22 +53,6 @@ module.exports = {
                     loader: 'babel-loader',
                 }],
                 exclude: /node_modules/,
-            },
-            {
-                test: /\.scss/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [{
-                            loader: 'css-loader',
-                            options: {
-                                minimize: true
-                            }
-                        },
-                        'postcss-loader',
-                        'sass-loader',
-                    ]
-                }),
-                exclude: /node_modules/
             },
             {
                 test: /\.css/,

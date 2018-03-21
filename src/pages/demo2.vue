@@ -34,9 +34,9 @@
     };
 </script>
 
-<style lang="scss" scoped>
-    @import "../assets/scss/variable.scss";
+<style  scoped>
+    /* @import "../assets/scss/variable.css";
     .demo2-page {
         font-size: 18px;
-    }
+    } */
 </style>

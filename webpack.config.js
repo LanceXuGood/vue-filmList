@@ -64,42 +64,23 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
-                    loaders: [{
-                            test: /\.scss/,
-                            use: [
-                                'style-loader',
-                                {
-                                    loader: 'css-loader',
-                                    options: {
-                                        importLoaders: 2,
-                                    }
-                                },
-                                {
-                                    loader: 'postcss-loader',
-                                    options: {
-                                        sourceMap: 'inline',
-                                    }
-                                },
-                                'sass-loader',
-                            ],
-                        },
+                    loaders: [
                         {
-                            test: /\.less/,
+                            test: /\.css/,
                             use: [
-                                'style-loader',
                                 {
                                     loader: 'css-loader',
                                     options: {
                                         importLoaders: 2,
                                     }
                                 },
+                                'style-loader',
                                 {
                                     loader: 'postcss-loader',
                                     options: {
                                         sourceMap: 'inline',
                                     }
-                                },
-                                'less-loader',
+                                }
                             ],
                         }
                     ]
@@ -111,26 +92,6 @@ module.exports = {
                 use: [{
                     loader: 'babel-loader',
                 }],
-                exclude: /node_modules/
-            },
-            {
-                test: /\.scss/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 2,
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: 'inline',
-                        }
-                    },
-                    'sass-loader',
-                ],
                 exclude: /node_modules/
             },
             {

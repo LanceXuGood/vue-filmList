@@ -47,9 +47,10 @@
     };
 </script>
 
-<style lang="scss">
-    @import "./assets/scss/index.scss";
-    @import "./assets/scss/variable.scss";
+<style>
+    @import url("./assets/scss/normalize.css");
+    @import url("./assets/scss/index.css");
+    @import url("./assets/scss/variable.css");
     #app {
         font-family: "Avenir", Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -65,8 +66,7 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        background: resolve('logo.png');
-        .container-scroll {
+        & .container-scroll {
             flex: 1;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;

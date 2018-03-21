@@ -24,9 +24,9 @@
     };
 </script>
 
-<style lang="scss" scoped>
-    @import '../assets/scss/index.scss';
-    @import '../assets/scss/variable.scss';
+<style  scoped>
+    /* @import '../assets/scss/index.css';
+    @import '../assets/scss/variable.css';
     .TopBar {
         // position: fixed;
         // z-index: 500;
@@ -37,7 +37,7 @@
         padding: 0px 30px;
         height: 80px;
         overflow: hidden;
-        background: $primary-color;
+        background: var(--primary-color);
         line-height: 80px;
         color: #999;
         font-size: 16px;
@@ -50,5 +50,5 @@
             color: #fff;
             @include font-dpr(18px);
         }
-    }
+    } */
 </style>
