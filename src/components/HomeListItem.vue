@@ -6,9 +6,9 @@
                     <img v-lazy="item.images.medium"  alt="" class="image">
                     <p class="rating">
                         <span v-for="(itemR,index) in item.rating.averageArr" :key="index" :class="{tr:itemR.star!=='half', full:itemR.star==='full' , none :itemR.star === 'none'}">
-                                                                <i class="iconfont" v-if="itemR.star!=='half'">&#xe630;</i>
-                                                                <i class="iconfont" v-if="itemR.star==='half'">&#xe61a;</i>
-                                                            </span>
+                            <i class="iconfont" v-if="itemR.star!=='half'">&#xe630;</i>
+                            <i class="iconfont" v-if="itemR.star==='half'">&#xe61a;</i>
+                        </span>
                     </p>
                 </div>
                 <div class="content">
