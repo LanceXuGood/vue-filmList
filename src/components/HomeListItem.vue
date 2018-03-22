@@ -32,8 +32,8 @@
           </div>
           <div class="rating">
             评分：
-            <p v-if="item.rating.average>0">
-              <span v-for="index in 5" :key="index">
+            <p>
+              <span v-if="item.rating.average>0" v-for="index in 5" :key="index">
                 <i class="iconfont" :class="{none: index*2>item.rating.average}">&#xe630;</i>
               </span>
               <b>{{item.rating.average>0?item.rating.average:"暂无评分"}}</b>
