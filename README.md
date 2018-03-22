@@ -16,14 +16,9 @@
     yarn                      npm 
     yarn install              npm install 
     yarn start                npm start        
-
-    * 注意事项：yarn和npm安装node-sass 有可能会出问题，如果失败请采用 cnpm 安装
-    * 具体node-sass怎么安装上，看命吧！
-    * 解决方案: [node-gyp](https://www.npmjs.com/package/node-gyp)
-    
+  
 
 # 更改
-
     
     * 2017-06-27
         webpack升级3.0
@@ -37,15 +32,20 @@
     * 2017-12-30
         合并dev到master,优化部分代码：完成了film-item的组件
 
-    * 2017-2-27
+    * 2018-2-27
         服务器集成jenkin,自动构建部署（暂时只是github搭建的，晚点会上gitlab,打算拿公司的项目着手）。
     
-    * 2017-2-27
+    * 2018-2-27
         加入lazyload组件。优化部分代码。
+    
+     * 2017-3-18
+        postcss完善配置项，rem升级到vw, cssnext替代sass文件，优化package.json文件，去除无用组件。
+
+    * 2017-3-22
+        film-item界面重新布局，服务器端配置数据库。
                 
 # ToDo
     * 将主页的film-item剥离（Done）
-    * 完成Nav组件
+    * 
     * film-detail页面的实现
-    * 加入loading动画
     
