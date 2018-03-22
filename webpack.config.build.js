@@ -9,35 +9,35 @@ const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const isDev = ENV === 'devlopment';
 console.log(isDev);
 module.exports = {
-    entry: {
-      app: ['babel-polyfill', path.resolve(__dirname, 'src/main.js')]
+  entry: {
+    app: ['babel-polyfill', path.resolve(__dirname, 'src/main.js')]
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/[name].[hash:8].js',
+    chunkFilename: 'js/[id].[hash:8].js',
+    publicPath: ''
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': path.resolve('src')
     },
-    output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'js/[name].[hash:8].js',
-      chunkFilename: 'js/[id].[hash:8].js',
-      publicPath: ''
-    },
-    resolve: {
-      alias: {
-        'vue$': 'vue/dist/vue.esm.js',
-        '@': path.resolve('src')
-      },
-      extensions: ['.web.js', '.js', '.vue', '.json']
+    extensions: ['.web.js', '.js', '.vue', '.json']
 
-    },
-    module: {
-      rules: [{
-          test: /\.jpe?g$|\.gif$|\.png$/i,
-          use: [{
-            loader: 'url-loader',
-            options: {
-              limit: 10000,
-              name: 'images/[hash:8].[name].[ext]',
-            }
-          }],
-          exclude: /node_modules/,
-        },
+  },
+  module: {
+    rules: [{
+        test: /\.jpe?g$|\.gif$|\.png$/i,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            name: 'images/[hash:8].[name].[ext]',
+          }
+        }],
+        exclude: /node_modules/,
+      }, {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
