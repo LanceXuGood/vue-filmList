@@ -28,33 +28,33 @@ const demo2 = () =>
 Vue.use(VueRouter);
 
 const routes = [{
-  path: '/',
-  redirect: '/home'
-},
-{
-  path: '/home',
-  component: Home,
-},
-{
-  path: '/filmDetail/:id',
-  component: FilDetail
-},
-{
-  path: '/upload',
-  component: Upload
-},
-{
-  path: '/demo1',
-  component: demo1
-},
-{
-  path: '/demo2',
-  component: demo2
-}
+    path: '/',
+    redirect: '/home'
+  },
+  {
+    path: '/home',
+    component: Home,
+  },
+  {
+    path: '/filmDetail/:id',
+    component: FilDetail
+  },
+  {
+    path: '/upload',
+    component: Upload
+  },
+  {
+    path: '/demo1',
+    component: demo1
+  },
+  {
+    path: '/demo2',
+    component: demo2
+  }
 ];
 
 const router = new VueRouter({
-  history: 'true',
+  mode: 'history',
   routes // （缩写）相当于 routes: routes
 });
 export default router;
