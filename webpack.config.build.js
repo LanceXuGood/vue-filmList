@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin'); //这个插件不支持热加载，所以开发环境不支持
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const isDev = ENV === 'devlopment';
-console.log(isDev);
+console.log("devlopment", isDev);
 module.exports = {
   entry: {
     app: ['babel-polyfill', path.resolve(__dirname, 'src/main.js')]
@@ -43,19 +43,15 @@ module.exports = {
         options: {
           loaders: [{
             test: /\.css/,
-            use: [{
+            use: [
+              'style-loader',
+              {
                 loader: 'css-loader',
                 options: {
                   importLoaders: 2,
                 }
               },
-              'style-loader',
-              {
-                loader: 'postcss-loader',
-                options: {
-                  sourceMap: 'inline',
-                }
-              }
+              'postcss-loader'
             ],
           }]
         },
