@@ -15,46 +15,40 @@ import VueRouter from 'vue-router';
 //     import (/* webpackChunkName: "HomeView" */ '../pages/demo1.vue');
 // const demo2 = () =>
 //     import (/* webpackChunkName: "HomeView" */ '../pages/demo2.vue');
-const Home = () =>
-  import ('../pages/home.vue');
-const FilDetail = () =>
-  import ('../pages/filmDetial.vue');
-const Upload = () =>
-  import ('../pages/Upload.vue');
-const demo1 = () =>
-  import ('../pages/demo1.vue');
-const demo2 = () =>
-  import ('../pages/demo2.vue');
+const Home = () => import ('../pages/home.vue');
+const FilDetail = () =>  import ('../pages/filmDetial.vue');
+const Upload = () => import ('../pages/Upload.vue');
+const demo1 = () =>  import ('../pages/demo1.vue');
+const demo2 = () => import ('../pages/demo2.vue');
 Vue.use(VueRouter);
-
 const routes = [{
-    path: '/',
-    redirect: '/home'
-  },
-  {
-    path: '/home',
-    component: Home,
-  },
-  {
-    path: '/filmDetail/:id',
-    component: FilDetail
-  },
-  {
-    path: '/upload',
-    component: Upload
-  },
-  {
-    path: '/demo1',
-    component: demo1
-  },
-  {
-    path: '/demo2',
-    component: demo2
-  }
+  path: '/',
+  redirect: '/home'
+},
+{
+  path: '/home',
+  component: Home,
+},
+{
+  path: '/filmDetail/:id',
+  component: FilDetail
+},
+{
+  path: '/upload',
+  component: Upload
+},
+{
+  path: '/demo1',
+  component: demo1
+},
+{
+  path: '/demo2',
+  component: demo2
+}
 ];
 
 const router = new VueRouter({
   mode: 'history',
-  routes // （缩写）相当于 routes: routes
+  routes: routes // （缩写）相当于 routes: routes
 });
 export default router;
