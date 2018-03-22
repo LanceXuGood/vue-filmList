@@ -1,16 +1,16 @@
 {
-    "presets": [
-        "es2015",
-        "stage-3"
-    ],
-    "plugins": [
-        "transform-decorators",
-        "transform-class-properties",
-        "syntax-dynamic-import", [
-            "component", [{
-                "libraryName": "mint-ui",
-                "style": true
-            }]
-        ]
+  "presets": [
+    "es2015",
+    "stage-3"
+  ],
+  "plugins": [
+    "transform-decorators",
+    "transform-class-properties",
+    "syntax-dynamic-import", [
+      "component", [{
+        "libraryName": "mint-ui",
+        "style": true
+      }]
     ]
+  ]
 }

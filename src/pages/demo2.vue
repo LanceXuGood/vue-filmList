@@ -11,32 +11,30 @@
 </template>
 
 <script>
-    import {
-        mapGetters
-    } from 'vuex';
-    export default {
-        name: '',
-        props: {},
-        computed: mapGetters({
-            sdfasf: 'getD1State'
-        }),
-        components: {},
-        data() {
-            return {
-                Demo2: {}
-            };
-        },
-        methods: {},
-        beforeMount() {},
-        mounted() {
-            console.log(this.$route);
-        }
+import { mapGetters } from 'vuex';
+export default {
+  name: '',
+  props: {},
+  computed: mapGetters({
+    sdfasf: 'getD1State'
+  }),
+  components: {},
+  data() {
+    return {
+      Demo2: {}
     };
+  },
+  methods: {},
+  beforeMount() {},
+  mounted() {
+    console.log(this.$route);
+  }
+};
 </script>
 
 <style  scoped>
-    /* @import "../assets/scss/variable.css";
-    .demo2-page {
-        font-size: 18px;
-    } */
+@import "../assets/scss/variable.css";
+.demo2-page {
+  font-size: 18px;
+}
 </style>

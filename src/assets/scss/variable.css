@@ -24,4 +24,9 @@ $sub-color:#4f946e; */
     justify-content: center;
   }
   ;
+  --textEllipsis:{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

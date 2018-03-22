@@ -1,72 +1,72 @@
 {
-    // 脚本执行的环境,不同的执行环境有不同的预定义全局变量
-    "env": {
-        "browser": true,
-        "es6": true,
-        "node": true
-    },
-    "plugins": [
-        "html", "standard", "promise"
-    ],
-    // 需要同构babel-eslint来解析es7.decorators,es7.classProperties
-    "parser": "babel-eslint",
-    // 使用推荐的规范配置:http://eslint.org/docs/rules/
-    //"extends": "eslint:recommended",
-    "extends": [
-        "standard",
-        "eslint:recommended"
-    ],
-    // https://github.com/airbnb/javascript
-    // "extends": "eslint-config-airbnb",
-    // 解析规则,决定ESLint认为哪些是错误
-    "parserOptions": {
-        // ECMAScript中的模块类型
-        "sourceType": "module",
-        // 指定要使用的ECMAScript的版本
-        "ecmaVersion": 7,
-        // 额外的语言特性配置
-        "ecmaFeatures": {
-            // 在全局作用域允许return语句
-            "globalReturn": true,
-            // 开启全局的严格模式
-            "impliedStrict": true,
-            // 支持未来的选项
-            "experimentalObjectRestSpread": true
-        }
-    },
-    // lint规则配置 "off" or 0 "warn" or 1 "error" or 2
-    // https://github.com/airbnb/javascript
-    "rules": {
-        "strict": "error",
-        // 缩进:4个空格
-        "indent": [
-            "warn",
-            4,
-            {
-                "SwitchCase": 1
-            }
-        ],
-        // 引号 单引号
-        "quotes": [
-            "warn",
-            "single"
-        ],
-        // 禁止多余的分号
-        "no-extra-semi": "warn",
-        // 分号 加分号 http://eslint.org/docs/rules/semi
-        "semi": [
-            "warn",
-            "always"
-        ],
-        //不允许有console调试
-        "no-console": "warn",
-        "no-alert": "error",
-        // 允许在 case 子句中使用词法声明
-        "no-case-declarations": "off",
-        "no-class-assign": "off",
-        // allow paren-less arrow functions
-        "'arrow-parens": 0,
-        // allow async-await
-        "generator-star-spacing": 0
+  // 脚本执行的环境,不同的执行环境有不同的预定义全局变量
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "plugins": [
+    "html", "standard", "promise"
+  ],
+  // 需要同构babel-eslint来解析es7.decorators,es7.classProperties
+  "parser": "babel-eslint",
+  // 使用推荐的规范配置:http://eslint.org/docs/rules/
+  //"extends": "eslint:recommended",
+  "extends": [
+    "standard",
+    "eslint:recommended"
+  ],
+  // https://github.com/airbnb/javascript
+  // "extends": "eslint-config-airbnb",
+  // 解析规则,决定ESLint认为哪些是错误
+  "parserOptions": {
+    // ECMAScript中的模块类型
+    "sourceType": "module",
+    // 指定要使用的ECMAScript的版本
+    "ecmaVersion": 7,
+    // 额外的语言特性配置
+    "ecmaFeatures": {
+      // 在全局作用域允许return语句
+      "globalReturn": true,
+      // 开启全局的严格模式
+      "impliedStrict": true,
+      // 支持未来的选项
+      "experimentalObjectRestSpread": true
     }
+  },
+  // lint规则配置 "off" or 0 "warn" or 1 "error" or 2
+  // https://github.com/airbnb/javascript
+  "rules": {
+    "strict": "error",
+    // 缩进:4个空格
+    "indent": [
+      "warn",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    // 引号 单引号
+    "quotes": [
+      "warn",
+      "single"
+    ],
+    // 禁止多余的分号
+    "no-extra-semi": "warn",
+    // 分号 加分号 http://eslint.org/docs/rules/semi
+    "semi": [
+      "warn",
+      "always"
+    ],
+    //不允许有console调试
+    "no-console": "warn",
+    "no-alert": "error",
+    // 允许在 case 子句中使用词法声明
+    "no-case-declarations": "off",
+    "no-class-assign": "off",
+    // allow paren-less arrow functions
+    "'arrow-parens": 0,
+    // allow async-await
+    "generator-star-spacing": 0
+  }
 }

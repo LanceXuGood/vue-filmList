@@ -13,37 +13,37 @@
 import { mapGetters, mapActions } from 'vuex';
 import mix from '../common/mixins';
 export default {
-    name: '',
-    mixins:[mix],
-    props: {},
-    computed: mapGetters({
-        sdfasf: 'getD1State'
-    }),
-    components: {},
-    data() {
-        return {
-            demo1: [1,23]
-        };
-    },
-    methods: {
-        ...mapActions(['setD1State']),
-        goToDemo2(params){
-            console.log(event.target);
-        // this.$router.push({ path: '/demo2', query: item})
-        // router组件.route当前页面的路由
-        }
-    },
-    beforeMount() {},
-    mounted() {
-        this.foo();
-        console.log(this);
+  name: '',
+  mixins: [mix],
+  props: {},
+  computed: mapGetters({
+    sdfasf: 'getD1State'
+  }),
+  components: {},
+  data() {
+    return {
+      demo1: [1, 23]
+    };
+  },
+  methods: {
+    ...mapActions(['setD1State']),
+    goToDemo2(params) {
+      console.log(event.target);
+      // this.$router.push({ path: '/demo2', query: item})
+      // router组件.route当前页面的路由
     }
+  },
+  beforeMount() {},
+  mounted() {
+    this.foo();
+    console.log(this);
+  }
 };
 </script>
 
 <style  scoped>
-/* @import "../assets/scss/variable.css";
+@import "../assets/scss/variable.css";
 .demo1-page {
   font-size: 18px;
-} */
+}
 </style>

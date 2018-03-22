@@ -7,48 +7,42 @@
 </template>
 
 <script>
-    import Bus from '../bus';
-    // 头部导航组件
-    export default {
-        name: 'TopBar',
-        props: {},
-        data() {
-            return {};
-        },
-        methods: {
-            showSlide() {
-                Bus.$emit('slideShow');
-            }
-        },
-        mounted() {}
-    };
+import Bus from '../bus';
+// 头部导航组件
+export default {
+  name: 'TopBar',
+  props: {},
+  data() {
+    return {};
+  },
+  methods: {
+    showSlide() {
+      Bus.$emit('slideShow');
+    }
+  },
+  mounted() {}
+};
 </script>
 
 <style  scoped>
-    /* @import '../assets/scss/index.css';
-    @import '../assets/scss/variable.css';
-    .TopBar {
-        // position: fixed;
-        // z-index: 500;
-        // top: 0;
-        // right: 0;
-        // left: 0;
-        // width: 100%;
-        padding: 0px 30px;
-        height: 80px;
-        overflow: hidden;
-        background: var(--primary-color);
-        line-height: 80px;
-        color: #999;
-        font-size: 16px;
-        display: flex;
-        .iconfont {
-            font-size: 16px;
-        }
-        p {
-            flex: 1;
-            color: #fff;
-            @include font-dpr(18px);
-        }
-    } */
+@import "../assets/scss/index.css";
+@import "../assets/scss/variable.css";
+.TopBar {
+  padding: 0px 30px;
+  height: 80px;
+  overflow: hidden;
+  background: var(--primary-color);
+  line-height: 80px;
+  color: #999;
+  font-size: 16px;
+  display: flex;
+  & .iconfont {
+    font-size: 16px;
+  }
+  & p {
+    flex: 1;
+    color: #fff;
+    font-size: 36px;
+  }
+}
 </style>

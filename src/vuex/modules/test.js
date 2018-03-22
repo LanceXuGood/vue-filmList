@@ -8,17 +8,19 @@ import * as types from '../mutation-types';
 
 // initial state
 const state = {
-    msg: ''
+  msg: ''
 };
 
 // 根据type 设置当前的test状态
 const mutations = {
-    [types.TEST](state, {msg}) {
-        state.msg = msg;
-    }
+  [types.TEST](state, {
+    msg
+  }) {
+    state.msg = msg;
+  }
 };
 
 export default {
-    state,
-    mutations
+  state,
+  mutations
 };
