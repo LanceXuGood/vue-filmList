@@ -2,10 +2,8 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
+const ENV = 'development';
 const isDev = ENV === 'development';
-console.log(isDev);
-
 
 module.exports = {
     entry: ['webpack/hot/only-dev-server', 'webpack-dev-server/client?http://0.0.0.0:8002', 'babel-polyfill', path.resolve(__dirname, 'src/main.js')],
@@ -37,13 +35,13 @@ module.exports = {
         host: '0.0.0.0',
         historyApiFallback: true,
         compress: true,
-        proxy: {
-            '/v2': {
-                target: 'https://api.douban.com/',
-                secure: false,
-                changeOrigin: true
-            }
-        },
+        // proxy: {
+        //     '/v2': {
+        //         target: 'https://api.douban.com/',
+        //         secure: false,
+        //         changeOrigin: true
+        //     }
+        // },
     },
     module: {
         rules: [{

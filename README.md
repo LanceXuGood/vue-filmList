@@ -39,13 +39,15 @@
         加入lazyload组件。优化部分代码。
     
      * 2017-3-18
-        postcss完善配置项，rem升级到vw, cssnext替代sass文件，优化package.json文件，去除无用组件。
+        postcss完善配置项，rem升级到vw(采坑淘宝适配方案), cssnext替代sass文件，优化package.json文件，去除无用组件。
 
     * 2017-3-22
         film-item界面重新布局，服务器端配置数据库。
                 
 # ToDo
     * 将主页的film-item剥离（Done）
-    * 
+    * api借口替换，爬取电影天堂的链接资源。
+    * 数据库操作。
     * film-detail页面的实现
+    * 注册接口。
     

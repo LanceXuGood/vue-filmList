@@ -1,7 +1,7 @@
 import http from '../http';
 
 export const getDouBanFilmList = (params) => {
-  return http.get('/movie/in_theaters', {
+  return http.get('v2/movie/in_theaters', {
     ...params
   });
 };
