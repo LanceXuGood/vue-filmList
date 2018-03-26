@@ -101,10 +101,6 @@ export default {
         });
       }
     };
-    http
-      .get("http://localhost:3001")
-      .then(data => console.log(data))
-      .catch(error => console.log(error));
   }
 };
 </script>
