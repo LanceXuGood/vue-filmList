@@ -1,5 +1,5 @@
 <template>
-  <div>{{m}}2</div>
+  <div>{{m}}1</div>
 </template>
 <script>
 export default {
