@@ -49,8 +49,8 @@
 </template>
 
 <script>
-import http from "../common/http";
 import { mapGetters, mapActions } from "vuex";
+import axios from "axios";
 export default {
   name: "",
   props: {},

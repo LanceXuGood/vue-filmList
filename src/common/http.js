@@ -4,7 +4,7 @@ import config from '../config/index';
 const instance = axios.create({
   baseURL: config.API_BASE_URL,
   timeout: 30000,
-  // withCredentials: true,
+  // withCredentials:true,
   headers: {
     'Content-Type': 'application/json'
   }

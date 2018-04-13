@@ -38,7 +38,7 @@ export default {
   mounted() {
     this.setTestState({
       msg: '2'
-    });
+    })
     Bus.$on('slideShow', this.slideValue);
   }
 };
