@@ -7,10 +7,15 @@ import router from './router';
 // 入口处引入状态
 import store from './vuex';
 import VueLazyload from 'vue-lazyload';
+import * as filter from "./common/filter";
 
 
 
 Vue.use(VueLazyload);
+
+Object.keys(filter).forEach(key => {
+  Vue.filter(key, filter[key]);
+});
 new Vue({
   el: '#app',
   router,

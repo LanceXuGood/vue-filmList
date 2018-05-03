@@ -7,7 +7,7 @@
         </div>
         <div class="content">
           <div class="title">
-            <span class="title-info">{{format(item.title)}}({{item.year}})</span>
+            <span class="title-info">{{item.title | titleformat}}({{item.year}})</span>
           </div>
           <div class="tags">
             <span v-for="(tag,index) in item.genres" :key="index" class="tag">{{tag}}</span>
@@ -62,15 +62,7 @@ export default {
     home: "geHomeState"
   }),
   methods: {
-    ...mapActions(["setHomeState"]),
-    format(value) {
-      if (value.length > 10) {
-        let va = value.substring(0, 6);
-        return `${va}...`;
-      } else {
-        return value;
-      }
-    }
+    ...mapActions(["setHomeState"])
   },
   beforeMount() {
     this.setHomeState({
