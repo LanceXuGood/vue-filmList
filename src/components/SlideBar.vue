@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-<style  scoped>
+<style  scoped lang="postcss">
 @import "../assets/scss/variable.css";
 .SlideBar {
   position: fixed;

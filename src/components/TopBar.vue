@@ -24,7 +24,7 @@ export default {
 };
 </script>
 
-<style  scoped>
+<style  scoped lang="postcss">
 @import "../assets/scss/index.css";
 @import "../assets/scss/variable.css";
 .TopBar {

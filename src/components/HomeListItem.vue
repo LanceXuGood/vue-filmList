@@ -1,6 +1,6 @@
 <template>
   <div class="HomeList" ref="list">
-    <div v-for="(item) in home.arr" :key="item.id" class="film-item">
+    <div v-for="(item,index) in home.arr" :key="index" class="film-item">
       <router-link :to="`/filmDetail/${item.id}`">
         <div class="left">
           <img v-lazy="item.images.small" alt="" class="image">
@@ -72,6 +72,7 @@ export default {
       start: 0,
       count: 5
     });
+
   },
   mounted() {
     const dom = this.$refs.list;
@@ -97,7 +98,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss">
 @import url("../assets/scss/variable.css");
 .film-item {
   box-shadow: 0 0 4px 0 rgba(232, 237, 250, 0.6),
