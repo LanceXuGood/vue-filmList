@@ -35,13 +35,13 @@ module.exports = {
     host: '0.0.0.0',
     historyApiFallback: true,
     compress: true,
-    // proxy: {
-    //   '/doubanProxy/*': {
-    //     target: 'https://api.douban.com/',
-    //     secure: false,
-    //     changeOrigin: true
-    //   }
-    // },
+    proxy: {
+      '/v2': {
+          target: 'https://api.douban.com/',
+          secure: false,
+          changeOrigin: true
+      }
+    },
   },
   module: {
     rules: [{

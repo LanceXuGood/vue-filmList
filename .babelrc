@@ -1,16 +1,14 @@
 {
   "presets": [
-    "es2015",
-    "stage-3"
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions", "safari >= 7"]
+      }
+    }],
+    "stage-0"
   ],
   "plugins": [
     "transform-decorators",
-    "transform-class-properties",
-    "syntax-dynamic-import", [
-      "component", [{
-        "libraryName": "mint-ui",
-        "style": true
-      }]
-    ]
+    "transform-class-properties"
   ]
 }

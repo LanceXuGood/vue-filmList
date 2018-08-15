@@ -27,7 +27,7 @@ export default {
 };
 </script>
 
-<style  scoped>
+<style lang="postcss" scoped>
 @import "../assets/scss/variable.css";
 .test-page {
   font-size: 16px;

@@ -14,6 +14,6 @@ export default {
   mounted() {}
 };
 </script>
-<style  scoped>
+<style lang="postcss" scoped>
 
 </style>

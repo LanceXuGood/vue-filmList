@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss">
 @import url("./assets/scss/normalize.css");
 @import url("./assets/scss/index.css");
 @import url("./assets/scss/variable.css");

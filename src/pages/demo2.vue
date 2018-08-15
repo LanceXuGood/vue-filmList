@@ -1,7 +1,7 @@
 <template>
     <div class="demo2-page">
         demo2
-        <div v-for="(item,index) in sdfasf.D1_data">
+        <div v-for="(item,index) in sdfasf.D1_data" :key="index">
             {{item}}
         </div>
         <div>
@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style  scoped>
+<style lang="postcss" scoped>
 @import "../assets/scss/variable.css";
 .demo2-page {
   font-size: 18px;
