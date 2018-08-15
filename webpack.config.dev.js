@@ -2,12 +2,13 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const ENV = 'development';
 const isDev = ENV === 'development';
 
 module.exports = {
+  mode: 'development',
   entry: ['webpack/hot/only-dev-server', 'webpack-dev-server/client?http://0.0.0.0:8002', 'babel-polyfill', path.resolve(__dirname, 'src/main.js')],
-  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[hash].js',
@@ -21,11 +22,6 @@ module.exports = {
     },
     extensions: ['.web.js', '.js', '.vue', '.json']
 
-  },
-  resolveLoader: {
-    alias: {
-      'scss-loader': 'sass-loader',
-    },
   },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
@@ -90,7 +86,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.css/,
+        test: /\.css$/,
         use: [
           'style-loader',
           {
@@ -112,18 +108,14 @@ module.exports = {
   },
   context: __dirname,
   plugins: [
+    new VueLoaderPlugin(),
     //new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
     new HtmlWebpackPlugin({
       title: '',
       hash: true,
       template: path.resolve(__dirname, 'src/index.html')
     }),
-    new webpack.DefinePlugin({
-      __DEV__: isDev,
-      'process.env': {
-        'NODE_ENV': JSON.stringify(ENV)
-      }
-    }),
+
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),

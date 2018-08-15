@@ -6,9 +6,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin'); //这个插件不支持热加载，所以开发环境不支持
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
-const isDev = ENV === 'devlopment';
-console.log("devlopment", isDev);
 module.exports = {
+  mode: 'production',
   entry: {
     app: ['babel-polyfill', path.resolve(__dirname, 'src/main.js')]
   },
@@ -85,14 +84,6 @@ module.exports = {
   plugins: [
 
     new webpack.HashedModuleIdsPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      output: {
-        comments: false
-      },
-      compress: {
-        warnings: false
-      }
-    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks(module) {
@@ -131,13 +122,5 @@ module.exports = {
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
     }),
-    new webpack.DefinePlugin({
-      __DEV__: isDev,
-      'process.env': {
-        'NODE_ENV': JSON.stringify(ENV)
-      }
-    }),
-    new webpack.optimize.ModuleConcatenationPlugin(), //webpack3新增
-    new webpack.NoEmitOnErrorsPlugin(),
   ],
 };

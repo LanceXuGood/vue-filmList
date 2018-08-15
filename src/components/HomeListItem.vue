@@ -98,7 +98,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style >
 @import url("../assets/scss/variable.css");
 .film-item {
   box-shadow: 0 0 4px 0 rgba(232, 237, 250, 0.6),

@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style lang="postcss" scoped>
+<style  scoped>
 @import "../assets/scss/variable.css";
 .demo2-page {
   font-size: 18px;
