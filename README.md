@@ -44,12 +44,13 @@
     * 2018-3-22
         film-item界面重新布局，服务器端配置数据库。
 
+    * 2018-3-22
+        film-item界面重新布局，服务器端配置数据库。
+
     * 2018-8-15
       项目中babel重新优化，webpack升级4.x。
 
 # ToDo
-    * 将主页的film-item剥离（Done）
-    * api借口替换，爬取电影天堂的链接资源。
-    * 数据库操作。
-    * film-detail页面的实现
+    * 将主页的film-item剥离 (Done)
+    * film-detail页面的实现 (30%)
     * 注册接口。

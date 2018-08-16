@@ -86,6 +86,14 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.less$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'less-loader'
+        ]
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',
