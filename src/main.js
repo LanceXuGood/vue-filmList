@@ -8,14 +8,17 @@ import router from './router';
 import store from './vuex';
 import VueLazyload from 'vue-lazyload';
 import * as filter from "./common/filter";
+import scrollReveal from "scrollreveal";
 
-
-
+Vue.config.devtools = true;
+Vue.config.performance = true;
 Vue.use(VueLazyload);
-
+Vue.prototype.scrollReveal = scrollReveal;
 Object.keys(filter).forEach(key => {
   Vue.filter(key, filter[key]);
 });
+
+
 new Vue({
   el: '#app',
   router,

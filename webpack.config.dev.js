@@ -3,8 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const ENV = 'development';
-const isDev = ENV === 'development';
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -29,7 +28,11 @@ module.exports = {
     inline: true,
     disableHostCheck: true,
     host: '0.0.0.0',
-    historyApiFallback: true,
+    historyApiFallback: {
+      rewrites: [
+        { from: /.*/, to: path.posix.join('/', 'index.html') },
+      ],
+    },
     compress: true,
     proxy: {
       '/v2': {
@@ -130,6 +133,11 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: path.resolve(__dirname, './src/assets'),
       to: 'assets',
-    }])
+    }]),
+    new FriendlyErrorsPlugin({
+      compilationSuccessInfo: {
+        messages: [`Your application is running here: http://localhost:8002`],
+      }
+    })
   ],
 };

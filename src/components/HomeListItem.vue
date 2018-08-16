@@ -1,6 +1,6 @@
 <template>
-  <div class="HomeList" ref="list">
-    <div v-for="(item,index) in home.arr" :key="index" class="film-item">
+  <div class="home-list" ref="list">
+    <div v-for="(item,index) in home.subjects" :key="index" class="film-item">
       <router-link :to="`/filmDetail/${item.id}`">
         <div class="left">
           <img v-lazy="item.images.small" alt="" class="image">
@@ -15,7 +15,8 @@
           <div class="durations">
             上映：
             <p>
-              {{item.mainland_pubdate}} <span v-for="(duration,index) in item.durations" :key="index" class="duration"> {{duration}}{{index===item.durations.length-1?'':'/'}}</span>
+              {{item.mainland_pubdate}}
+              <span v-for="(duration,index) in item.durations" :key="index" class="duration"> {{duration}}{{index===item.durations.length-1?'':'/'}}</span>
             </p>
           </div>
           <div class="directors ">
@@ -42,64 +43,59 @@
         </div>
       </router-link>
     </div>
-    <transition name="fade">
+    <!-- <transition name="fade">
       <p class="tipText" v-show="home.isLoading">{{tipText}}</p>
-    </transition>
+    </transition> -->
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { getDouBanFilmList } from '@/common/api/home';
 export default {
   name: "",
-  props: {},
+
   data() {
     return {
-      tipText: "正在加载..."
+      ScrollReveal: this.scrollReveal(),
+      tipText: "正在加载...",
+      home: [],
     };
   },
-  computed: mapGetters({
-    home: "geHomeState"
-  }),
   methods: {
-    ...mapActions(["setHomeState"])
+    async getList(query) {
+      this.home = await getDouBanFilmList(query)
+
+      this.$nextTick(()=>{
+        this.ScrollReveal.reveal('.home-list .film-item', {
+          container: '.home-list',
+          duration: 500,
+          // 在移动端是否使用动画
+          mobile: true,
+          // 其他可用的动画效果
+          easing: 'linear',
+          scale: 0.9,
+          reset: true
+        });
+      });
+    }
   },
 
   beforeMount() {
-    this.setHomeState({
+    this.getList({
       apikey: "0b2bdeda43b5688921839c8ecb20399b",
       city: "上海",
       start: 0,
-      count: 5
-    });
-
+    })
   },
   mounted() {
-    const dom = this.$refs.list;
-    dom.onscroll = e => {
-      const scrollHeight = dom.scrollHeight;
-      const height = dom.clientHeight;
-      const scrollTop = dom.scrollTop;
-      if (scrollHeight - height - scrollTop < 5 && !this.home.isLoading) {
-        let count = this.home.flimListData.start;
-        count += 5;
-        if (count > this.home.flimListData.total) {
-          return;
-        }
-        this.setHomeState({
-          apikey: "0b2bdeda43b5688921839c8ecb20399b",
-          city: "上海",
-          start: count,
-          count: 5
-        });
-      }
-    };
+    // this.ScrollReveal.reveal('.film-item', { mobile: true });
+
   }
 };
 </script>
 
-<style >
-@import url("../assets/scss/variable.css");
+<style>
+@import url('../assets/scss/variable.css');
 .film-item {
   box-shadow: 0 0 4px 0 rgba(232, 237, 250, 0.6),
     0 1px 2px 0 rgba(232, 237, 250, 0.5);
@@ -203,7 +199,7 @@ export default {
     }
   }
 }
-.HomeList {
+.home-list {
   flex: 1;
   overflow-y: auto;
   position: relative;

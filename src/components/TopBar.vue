@@ -1,9 +1,9 @@
 <template>
-    <div class="TopBar">
-        <i @click="showSlide" class="iconfont icon-nav"></i>
-        <p>Lance测试网站</p>
-        <i class="iconfont icon-wo"></i>
-    </div>
+  <div class="TopBar">
+    <i @click="showSlide" class="iconfont icon-nav"></i>
+    <p>电影咨询网</p>
+    <i class="iconfont icon-wo"></i>
+  </div>
 </template>
 
 <script>
@@ -25,8 +25,8 @@ export default {
 </script>
 
 <style  scoped >
-@import "../assets/scss/index.css";
-@import "../assets/scss/variable.css";
+@import '../assets/scss/index.css';
+@import '../assets/scss/variable.css';
 .TopBar {
   padding: 0px 30px;
   height: 80px;

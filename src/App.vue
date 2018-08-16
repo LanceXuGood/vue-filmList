@@ -1,12 +1,10 @@
 <template>
-    <div id="app">
-        <transition name='slide'>
-            <SlideBar v-show="show" @slideHide="Hide"></SlideBar>
-        </transition>
-        <div class="container-scroll">
-            <router-view></router-view>
-        </div>
-    </div>
+  <div id="app">
+    <transition name='slide'>
+      <SlideBar v-show="show" @slideHide="Hide"></SlideBar>
+    </transition>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
@@ -45,11 +43,11 @@ export default {
 </script>
 
 <style>
-@import url("./assets/scss/normalize.css");
-@import url("./assets/scss/index.css");
-@import url("./assets/scss/variable.css");
+@import url('./assets/scss/normalize.css');
+@import url('./assets/scss/index.css');
+@import url('./assets/scss/variable.css');
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
