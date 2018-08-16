@@ -64,18 +64,18 @@ export default {
     async getList(query) {
       this.home = await getDouBanFilmList(query)
 
-      this.$nextTick(()=>{
-        this.ScrollReveal.reveal('.home-list .film-item', {
-          container: '.home-list',
-          duration: 500,
-          // 在移动端是否使用动画
-          mobile: true,
-          // 其他可用的动画效果
-          easing: 'linear',
-          scale: 0.9,
-          reset: true
-        });
-      });
+      // this.$nextTick(()=>{
+      //   this.ScrollReveal.reveal('.home-list .film-item', {
+      //     container: '.home-list',
+      //     duration: 500,
+      //     // 在移动端是否使用动画
+      //     mobile: true,
+      //     // 其他可用的动画效果
+      //     easing: 'linear',
+      //     scale: 0.9,
+      //     reset: true
+      //   });
+      // });
     }
   },
 
@@ -95,10 +95,11 @@ export default {
 .film-item {
   box-shadow: 0 0 4px 0 rgba(232, 237, 250, 0.6),
     0 1px 2px 0 rgba(232, 237, 250, 0.5);
-  padding: 20px;
+  padding: 4px;
   padding-bottom: 10px;
   margin-bottom: 10px;
   margin-top: 10px;
+  overflow: hidden;
   p,
   div {
     color: #666;
@@ -109,7 +110,7 @@ export default {
     justify-content: center;
     align-items: flex-start;
     .left {
-      width: 170px;
+      width: 30%;
       height: 250px;
       margin-right: 20px;
       .image {
@@ -118,16 +119,15 @@ export default {
       }
     }
     .content {
-      flex: 1;
+      width: 70%;
       > div {
         text-align: left;
         margin-bottom: 10px;
-        font-size: 26px;
+        font-size: 14px;
       }
       .title {
         text-align: left;
         .title-info {
-          font-size: 26px;
           font-weight: bold;
           span {
             color: #494949;
@@ -152,9 +152,8 @@ export default {
         text-align: left;
         display: flex;
         justify-content: flex-start;
-        align-items: flex-start;
         overflow: hidden;
-        font-size: 24px;
+        font-size: 14px;
         p {
           .textEllipsis;
           width: 420px;
@@ -176,15 +175,14 @@ export default {
             display: flex;
             align-items: center;
             .iconfont {
-              font-size: 12px;
+              font-size: 14px;
             }
           }
           b {
             display: block;
             margin-left: 10px;
             color: #ffb400;
-            font-size: 24px;
-            line-height: 46px;
+            font-size: 14px;
             overflow: hidden;
           }
         }

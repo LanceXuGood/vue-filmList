@@ -2,7 +2,7 @@
   <div class="top-bar">
     <i @click="showSlide" class="iconfont">&#xe60b;</i>
     <p>电影咨询网</p>
-    <i class="iconfont">&#xe611;</i>
+    <i class="iconfont">&#xe60e;</i>
   </div>
 </template>
 
@@ -28,21 +28,21 @@ export default {
 @import '../assets/less/variable.less';
 .top-bar {
   padding: 0 10px;
-  height: 40px;
+  height: 50px;
   overflow: hidden;
   background: @primary-color;
-  line-height: 40px;
+  line-height: 50px;
   color: #999;
   font-size: 16px;
   display: flex;
   .iconfont {
-    font-size: 16px;
+    font-size: 18px;
     color: #fff;
   }
   p {
     flex: 1;
     color: #fff;
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 </style>
