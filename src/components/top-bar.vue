@@ -1,8 +1,8 @@
 <template>
-  <div class="TopBar">
-    <i @click="showSlide" class="iconfont icon-nav"></i>
+  <div class="top-bar">
+    <i @click="showSlide" class="iconfont">&#xe60b;</i>
     <p>电影咨询网</p>
-    <i class="iconfont icon-wo"></i>
+    <i class="iconfont">&#xe611;</i>
   </div>
 </template>
 
@@ -11,7 +11,6 @@ import Bus from '../bus';
 // 头部导航组件
 export default {
   name: 'TopBar',
-  props: {},
   data() {
     return {};
   },
@@ -24,25 +23,26 @@ export default {
 };
 </script>
 
-<style  scoped >
-@import '../assets/scss/index.css';
-@import '../assets/scss/variable.css';
-.TopBar {
-  padding: 0px 30px;
-  height: 80px;
+<style lang="less" scoped >
+@import '../assets/less/index.less';
+@import '../assets/less/variable.less';
+.top-bar {
+  padding: 0 10px;
+  height: 40px;
   overflow: hidden;
-  background: var(--primary-color);
-  line-height: 80px;
+  background: @primary-color;
+  line-height: 40px;
   color: #999;
   font-size: 16px;
   display: flex;
-  & .iconfont {
+  .iconfont {
     font-size: 16px;
+    color: #fff;
   }
-  & p {
+  p {
     flex: 1;
     color: #fff;
-    font-size: 36px;
+    font-size: 16px;
   }
 }
 </style>

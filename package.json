@@ -44,6 +44,8 @@
     "koa": "^2.5.2",
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.3",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
     "lodash": "^4.17.10",
     "nodemon": "^1.18.3",
     "normalize.css": "^6.0.0",

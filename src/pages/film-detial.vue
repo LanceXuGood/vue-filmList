@@ -1,7 +1,7 @@
 <template>
-    <div class="filmDetail">
-        <h3>{{filmDetail.title}}</h3>
-    </div>
+  <div class="filmDetail">
+    <h3>{{filmDetail.title}}</h3>
+  </div>
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
       apikey: '0b2bdeda43b5688921839c8ecb20399b',
       city: '上海',
       start: 0,
-      count: 10
+      count: 100
     });
     this.filmDetail = data;
   },
@@ -30,6 +30,5 @@ export default {
 </script>
 
 <style  scoped>
-
 </style>
 

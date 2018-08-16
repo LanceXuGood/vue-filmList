@@ -29,16 +29,17 @@ module.exports = {
     disableHostCheck: true,
     host: '0.0.0.0',
     historyApiFallback: {
-      rewrites: [
-        { from: /.*/, to: path.posix.join('/', 'index.html') },
-      ],
+      rewrites: [{
+        from: /.*/,
+        to: path.posix.join('/', 'index.html')
+      }, ],
     },
     compress: true,
     proxy: {
       '/v2': {
-          target: 'https://api.douban.com/',
-          secure: false,
-          changeOrigin: true
+        target: 'https://api.douban.com/',
+        secure: false,
+        changeOrigin: true
       }
     },
   },
@@ -75,7 +76,8 @@ module.exports = {
                 options: {
                   sourceMap: 'inline',
                 }
-              }
+              },
+              'less-loader'
             ],
           }]
         },

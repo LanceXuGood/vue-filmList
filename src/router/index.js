@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../pages/home.vue';
-import FilDetail from '../pages/filmDetial.vue';
+import FilDetail from '../pages/film-detial.vue';
 import Upload from '../pages/Upload.vue';
 import demo1 from '../pages/demo1.vue';
 import demo2 from '../pages/demo2.vue';
@@ -30,7 +30,7 @@ const routes = [{
   component: Home,
 },
 {
-  path: '/filmDetail/:id',
+  path: '/film-detail/:id',
   component: FilDetail
 },
 {
@@ -48,7 +48,7 @@ const routes = [{
 ];
 
 const router = new VueRouter({
-  // mode: 'history',
+  mode: 'history',
   routes: routes // （缩写）相当于 routes: routes
 });
 export default router;

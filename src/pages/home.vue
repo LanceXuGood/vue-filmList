@@ -1,13 +1,13 @@
 <template>
-    <div class="home-page">
-        <TopBar></TopBar>
-        <HomeListItem></HomeListItem>
-    </div>
+  <div class="home-page">
+    <top-bar></top-bar>
+    <home-list-item></home-list-item>
+  </div>
 </template>
 
 <script>
-import HomeListItem from '../components/HomeListItem.vue';
-import TopBar from '../components/TopBar.vue';
+import HomeListItem from '../components/home-list-item.vue';
+import TopBar from '../components/top-bar.vue';
 export default {
   name: '',
   props: {},
@@ -26,8 +26,8 @@ export default {
 };
 </script>
 
-<style scoped >
-@import "../assets/scss/variable.css";
+<style scoped>
+@import '../assets/less/variable.less';
 .home-page {
   font-size: 16px;
   position: absolute;

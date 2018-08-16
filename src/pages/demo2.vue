@@ -1,13 +1,13 @@
 <template>
-    <div class="demo2-page">
-        demo2
-        <div v-for="(item,index) in sdfasf.D1_data" :key="index">
-            {{item}}
-        </div>
-        <div>
-            {{this.$route.query.plan}}
-        </div>
+  <div class="demo2-page">
+    demo2
+    <div v-for="(item,index) in sdfasf.D1_data" :key="index">
+      {{item}}
     </div>
+    <div>
+      {{this.$route.query.plan}}
+    </div>
+  </div>
 </template>
 
 <script>
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style  scoped>
-@import "../assets/scss/variable.css";
+@import '../assets/less/variable.less';
 .demo2-page {
   font-size: 18px;
 }

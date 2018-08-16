@@ -1,8 +1,8 @@
 <template>
-    <div class="test-page">
-        <input type="file" @change="doSomethingElse" >
+  <div class="test-page">
+    <input type="file" @change="doSomethingElse">
 
-    </div>
+  </div>
 </template>
 
 <script>
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style  scoped>
-@import "../assets/scss/variable.css";
+@import '../assets/less/variable.less';
 .test-page {
   font-size: 16px;
 }

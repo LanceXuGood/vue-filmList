@@ -12,12 +12,13 @@ import scrollReveal from "scrollreveal";
 
 Vue.config.devtools = true;
 Vue.config.performance = true;
-Vue.use(VueLazyload);
 Vue.prototype.scrollReveal = scrollReveal;
+
+Vue.use(VueLazyload);
+
 Object.keys(filter).forEach(key => {
   Vue.filter(key, filter[key]);
 });
-
 
 new Vue({
   el: '#app',

@@ -1,7 +1,7 @@
 <template>
   <div class="home-list" ref="list">
     <div v-for="(item,index) in home.subjects" :key="index" class="film-item">
-      <router-link :to="`/filmDetail/${item.id}`">
+      <router-link :to="`/film-detail/${item.id}`">
         <div class="left">
           <img v-lazy="item.images.small" alt="" class="image">
         </div>
@@ -57,7 +57,6 @@ export default {
   data() {
     return {
       ScrollReveal: this.scrollReveal(),
-      tipText: "正在加载...",
       home: [],
     };
   },
@@ -85,17 +84,14 @@ export default {
       apikey: "0b2bdeda43b5688921839c8ecb20399b",
       city: "上海",
       start: 0,
-    })
+      count: 100
+    });
   },
-  mounted() {
-    // this.ScrollReveal.reveal('.film-item', { mobile: true });
-
-  }
 };
 </script>
 
-<style>
-@import url('../assets/scss/variable.css');
+<style lang="less">
+@import url('../assets/less/variable.less');
 .film-item {
   box-shadow: 0 0 4px 0 rgba(232, 237, 250, 0.6),
     0 1px 2px 0 rgba(232, 237, 250, 0.5);
@@ -103,87 +99,87 @@ export default {
   padding-bottom: 10px;
   margin-bottom: 10px;
   margin-top: 10px;
-  & p,
-  & div {
+  p,
+  div {
     color: #666;
   }
-  & > a {
+  > a {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    & .left {
+    .left {
       width: 170px;
       height: 250px;
       margin-right: 20px;
-      & .image {
+      .image {
         width: 100%;
         height: 100%;
       }
     }
-    & .content {
+    .content {
       flex: 1;
-      & > div {
+      > div {
         text-align: left;
         margin-bottom: 10px;
         font-size: 26px;
       }
-      & .title {
+      .title {
         text-align: left;
-        & .title-info {
+        .title-info {
           font-size: 26px;
           font-weight: bold;
-          & span {
+          span {
             color: #494949;
           }
         }
       }
-      & .tags {
+      .tags {
         text-align: left;
-        & span {
+        span {
           display: inline-block;
           padding: 2px 5px;
           margin-right: 5px;
           border-color: #e3f1ed;
           background-color: #f2f8f2;
-          color: var(--sub-color);
+          color: @sub-color;
         }
       }
-      & .directors,
-      & .durations,
-      & .rating,
-      & .casts {
+      .directors,
+      .durations,
+      .rating,
+      .casts {
         text-align: left;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
         overflow: hidden;
         font-size: 24px;
-        & p {
+        p {
+          .textEllipsis;
           width: 420px;
-          @apply --textEllipsis;
         }
-        & > div {
+        > div {
           flex: 1;
         }
       }
-      & .rating {
+      .rating {
         height: 36px;
-        & p {
+        p {
           display: flex;
           justify-content: flex-start;
           align-items: center;
           height: 100%;
-          & span {
+          span {
             display: inline-block;
             color: rgb(247, 186, 42);
             display: flex;
             align-items: center;
-            & .iconfont {
+            .iconfont {
               font-size: 12px;
             }
           }
-          & b {
+          b {
             display: block;
             margin-left: 10px;
             color: #ffb400;
@@ -192,7 +188,7 @@ export default {
             overflow: hidden;
           }
         }
-        & .none {
+        .none {
           color: darkgray;
         }
       }

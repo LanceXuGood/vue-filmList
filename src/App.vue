@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <transition name='slide'>
-      <SlideBar v-show="show" @slideHide="Hide"></SlideBar>
+      <slide-bar v-show="show" @slideHide="Hide"></slide-bar>
     </transition>
     <router-view></router-view>
   </div>
@@ -9,7 +9,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
-import SlideBar from './components/SlideBar.vue';
+import SlideBar from './components/slide-bar.vue';
 import Bus from './bus';
 export default {
   name: 'app',
@@ -42,10 +42,10 @@ export default {
 };
 </script>
 
-<style>
-@import url('./assets/scss/normalize.css');
-@import url('./assets/scss/index.css');
-@import url('./assets/scss/variable.css');
+<style lang="less">
+@import url('./assets/less/normalize.less');
+@import url('./assets/less/index.less');
+@import url('./assets/less/variable.less');
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -61,7 +61,7 @@ export default {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  & .container-scroll {
+  .container-scroll {
     flex: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
