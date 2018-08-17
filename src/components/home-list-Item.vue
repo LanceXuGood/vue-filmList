@@ -13,23 +13,16 @@
             <span v-for="(tag,index) in item.genres" :key="index" class="tag">{{tag}}</span>
           </div>
           <div class="durations">
-            上映：
-            <p>
-              {{item.mainland_pubdate}}
-              <span v-for="(duration,index) in item.durations" :key="index" class="duration"> {{duration}}{{index===item.durations.length-1?'':'/'}}</span>
-            </p>
+            上映：{{item.mainland_pubdate}}
+            <span v-for="(duration,index) in item.durations" :key="index" class="duration"> {{duration}}{{index===item.durations.length-1?'':'/'}}</span>
           </div>
           <div class="directors ">
             编剧：
-            <p class="textEllipsis">
-              <span v-for="(director,index) in item.directors" :key="index">{{director.name}}{{index===item.directors.length-1?'':'/'}}</span>
-            </p>
+            <span v-for="(director,index) in item.directors" :key="index">{{director.name}}{{index===item.directors.length-1?'':'/'}}</span>
           </div>
           <div class="casts">
             演员：
-            <p class="textEllipsis">
-              <span v-for="(cast,index) in item.casts" :key="index">{{cast.name}}{{index===item.casts.length-1?'':'/'}}</span>
-            </p>
+            <span v-for="(cast,index) in item.casts" :key="index">{{cast.name}}{{index===item.casts.length-1?'':'/'}}</span>
           </div>
           <div class="rating">
             评分：
@@ -64,18 +57,19 @@ export default {
     async getList(query) {
       this.home = await getDouBanFilmList(query)
 
-      // this.$nextTick(()=>{
-      //   this.ScrollReveal.reveal('.home-list .film-item', {
-      //     container: '.home-list',
-      //     duration: 500,
-      //     // 在移动端是否使用动画
-      //     mobile: true,
-      //     // 其他可用的动画效果
-      //     easing: 'linear',
-      //     scale: 0.9,
-      //     reset: true
-      //   });
-      // });
+      this.$nextTick(()=>{
+        this.ScrollReveal.reveal('.home-list .film-item', {
+          container: '.home-list',
+          duration: 500,
+          // 在移动端是否使用动画
+          mobile: true,
+          // 其他可用的动画效果
+          easing: 'linear',
+          scale: 0.9,
+          reset: true,
+
+        });
+      });
     }
   },
 
@@ -111,18 +105,16 @@ export default {
     align-items: flex-start;
     .left {
       width: 30%;
-      height: 250px;
       margin-right: 20px;
       .image {
-        width: 100%;
-        height: 100%;
+        width: 85%;
       }
     }
     .content {
       width: 70%;
       > div {
         text-align: left;
-        margin-bottom: 10px;
+        margin-bottom: 4px;
         font-size: 14px;
       }
       .title {
@@ -151,19 +143,18 @@ export default {
       .casts {
         text-align: left;
         display: flex;
-        justify-content: flex-start;
-        overflow: hidden;
-        font-size: 14px;
-        p {
-          .textEllipsis;
-          width: 420px;
-        }
-        > div {
-          flex: 1;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .durations {
+        span {
+          display: inline-block;
+          margin-left: 10px;
         }
       }
       .rating {
-        height: 36px;
+        height: 20px;
         p {
           display: flex;
           justify-content: flex-start;

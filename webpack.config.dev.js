@@ -28,6 +28,7 @@ module.exports = {
     inline: true,
     disableHostCheck: true,
     host: '0.0.0.0',
+    hot: true,
     historyApiFallback: {
       rewrites: [{
         from: /.*/,
