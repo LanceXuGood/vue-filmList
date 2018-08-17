@@ -1,25 +1,15 @@
 <template>
   <div class="top-bar">
-    <i @click="showSlide" class="iconfont">&#xe60b;</i>
+    <i class="iconfont">&#xe60b;</i>
     <p>电影咨询网</p>
     <i class="iconfont">&#xe60e;</i>
   </div>
 </template>
 
 <script>
-import Bus from '../bus';
 // 头部导航组件
 export default {
-  name: 'TopBar',
-  data() {
-    return {};
-  },
-  methods: {
-    showSlide() {
-      Bus.$emit('slideShow');
-    }
-  },
-  mounted() {}
+  name: 'TopBar'
 };
 </script>
 

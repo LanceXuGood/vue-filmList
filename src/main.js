@@ -7,6 +7,7 @@ import router from './router';
 // 入口处引入状态
 import store from './vuex';
 import VueLazyload from 'vue-lazyload';
+import DyLoading from './components/loading';
 import * as filter from "./common/filter";
 import scrollReveal from "scrollreveal";
 
@@ -15,6 +16,8 @@ Vue.config.performance = true;
 Vue.prototype.scrollReveal = scrollReveal;
 
 Vue.use(VueLazyload);
+
+Vue.component('DyLoading', DyLoading);
 
 Object.keys(filter).forEach(key => {
   Vue.filter(key, filter[key]);

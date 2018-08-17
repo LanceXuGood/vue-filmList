@@ -6,11 +6,91 @@
   <title>影片</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    .init-loading-warpper {
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999999
+    }
+
+    .init-loading-warpper .loading {
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      margin-left: 10%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+
+    .init-loading-warpper .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 100%;
+      display: inline-block;
+      animation: slide 1.2s infinite;
+    }
+
+    .init-loading-warpper .dot:nth-of-type(1) {
+      animation-delay: 0.1s;
+      background: #4f946e;
+    }
+
+    .init-loading-warpper .dot:nth-of-type(2) {
+      animation-delay: 0.2s;
+      background: #64aacc;
+    }
+
+    .init-loading-warpper .dot:nth-of-type(3) {
+      animation-delay: 0.3s;
+      background: #96aacc;
+    }
+
+    .init-loading-warpper .dot:nth-of-type(4) {
+      animation-delay: 0.4s;
+      background: #c8aacc;
+    }
+
+    .init-loading-warpper .dot:nth-of-type(5) {
+      animation-delay: 0.5s;
+      background: #faaacc;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.3;
+        transform: scale(2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+  </style>
   <link rel="stylesheet" href="//at.alicdn.com/t/font_502449_caz1m87l6vbwqaor.less">
 
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <div class="init-loading-warpper">
+      <div class="loading">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+    </div>
+
   </body>
 
 </html>

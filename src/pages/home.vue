@@ -1,6 +1,6 @@
 <template>
   <div class="home-page">
-    <top-bar></top-bar>
+    <dy-loading :loading="loading"></dy-loading>
     <home-list-item></home-list-item>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      filmData: {}
+      loading: true
     };
   },
   methods: {},
@@ -30,12 +30,6 @@ export default {
 @import '../assets/less/variable.less';
 .home-page {
   font-size: 16px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 </style>

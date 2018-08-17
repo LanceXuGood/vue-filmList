@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../pages/home.vue';
-import FilDetail from '../pages/film-detial.vue';
-import Upload from '../pages/Upload.vue';
-import demo1 from '../pages/demo1.vue';
-import demo2 from '../pages/demo2.vue';
+import Home from '@/pages/home.vue';
+import Layout from '@/components/layout.vue';
+import FilDetail from '@/pages/film-detial.vue';
+import Upload from '@/pages/Upload.vue';
+import demo1 from '@/pages/demo1.vue';
+import demo2 from '@/pages/demo2.vue';
 // const Home = () =>
 //     import (/* webpackChunkName: "HomeView" */ '../pages/home.vue');
 // const FilDetail = () =>
@@ -23,11 +24,14 @@ import demo2 from '../pages/demo2.vue';
 Vue.use(VueRouter);
 const routes = [{
   path: '/',
-  redirect: '/home'
-},
-{
-  path: '/home',
-  component: Home,
+  component: Layout,
+  redirect: '/home',
+  children: [
+    {
+      path: '/home',
+      component: Home,
+    },
+  ]
 },
 {
   path: '/film-detail/:id',

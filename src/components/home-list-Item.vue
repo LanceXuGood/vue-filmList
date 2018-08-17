@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     async getList(query) {
-      this.home = await getDouBanFilmList(query)
+      this.home = await getDouBanFilmList(query);
 
       this.$nextTick(()=>{
         this.ScrollReveal.reveal('.home-list .film-item', {
@@ -69,6 +69,7 @@ export default {
           reset: true,
 
         });
+        this.$parent.loading = false;
       });
     }
   },
@@ -84,8 +85,22 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 @import url('../assets/less/variable.less');
+
+.home-list {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.left {
+  width: 30%;
+  margin-right: 20px;
+  .image {
+    width: 85%;
+  }
+}
 .film-item {
   box-shadow: 0 0 4px 0 rgba(232, 237, 250, 0.6),
     0 1px 2px 0 rgba(232, 237, 250, 0.5);
@@ -103,92 +118,81 @@ export default {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    .left {
-      width: 30%;
-      margin-right: 20px;
-      .image {
-        width: 85%;
-      }
-    }
-    .content {
-      width: 70%;
-      > div {
-        text-align: left;
-        margin-bottom: 4px;
+  }
+}
+.content {
+  width: 70%;
+  > div {
+    text-align: left;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+}
+.rating {
+  height: 20px;
+  p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    span {
+      display: inline-block;
+      color: rgb(247, 186, 42);
+      display: flex;
+      align-items: center;
+      .iconfont {
         font-size: 14px;
       }
-      .title {
-        text-align: left;
-        .title-info {
-          font-weight: bold;
-          span {
-            color: #494949;
-          }
-        }
-      }
-      .tags {
-        text-align: left;
-        span {
-          display: inline-block;
-          padding: 2px 5px;
-          margin-right: 5px;
-          border-color: #e3f1ed;
-          background-color: #f2f8f2;
-          color: @sub-color;
-        }
-      }
-      .directors,
-      .durations,
-      .rating,
-      .casts {
-        text-align: left;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      .durations {
-        span {
-          display: inline-block;
-          margin-left: 10px;
-        }
-      }
-      .rating {
-        height: 20px;
-        p {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          height: 100%;
-          span {
-            display: inline-block;
-            color: rgb(247, 186, 42);
-            display: flex;
-            align-items: center;
-            .iconfont {
-              font-size: 14px;
-            }
-          }
-          b {
-            display: block;
-            margin-left: 10px;
-            color: #ffb400;
-            font-size: 14px;
-            overflow: hidden;
-          }
-        }
-        .none {
-          color: darkgray;
-        }
-      }
+    }
+    b {
+      display: block;
+      margin-left: 10px;
+      color: #ffb400;
+      font-size: 14px;
+      overflow: hidden;
+    }
+  }
+  .none {
+    color: darkgray;
+  }
+}
+.title {
+  text-align: left;
+  .title-info {
+    font-weight: bold;
+    span {
+      color: #494949;
     }
   }
 }
-.home-list {
-  flex: 1;
-  overflow-y: auto;
-  position: relative;
+.tags {
+  text-align: left;
+  span {
+    display: inline-block;
+    padding: 2px 5px;
+    margin-right: 5px;
+    border-color: #e3f1ed;
+    background-color: #f2f8f2;
+    color: @sub-color;
+  }
 }
+.directors,
+.durations,
+.rating,
+.casts {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.durations {
+  span {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
 .tipText {
   color: #494949;
   height: 60px;
