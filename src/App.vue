@@ -8,7 +8,7 @@
 export default {
   name: 'app',
   mounted() {
-document.querySelector('.init-loading-warpper').style.display = 'none';
+    document.querySelector('.init-loading-warpper').style.display = 'none';
   }
 };
 </script>
