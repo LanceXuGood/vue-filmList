@@ -7,4 +7,4 @@ build/**
 /.eslintcache
 /.gitattributes
 /dist
-
+/coverage
