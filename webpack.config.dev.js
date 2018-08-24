@@ -22,11 +22,7 @@ module.exports = {
     extensions: ['.web.js', '.js', '.vue', '.json']
 
   },
-  resolveLoader: {
-    alias: {
-      'scss-loader': 'sass-loader',
-    },
-  },
+
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     port: 8002,
@@ -67,17 +63,6 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          loaders: [{
-            test: /\.scss/,
-            use: [
-              'vue-style-loader',
-              'css-loader',
-              'postcss-loader',
-              'sass-loader',
-            ],
-          }]
-        },
         exclude: /node_modules/
       },
       {

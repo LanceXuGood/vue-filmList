@@ -15,10 +15,11 @@ export default {
 </script>
 
 <style lang="scss" scoped >
+
 @import '../assets/scss/variable.scss';
 .search-bar-warpper {
   width: 100%;
   height: 40px;
-  display: flex;
+
 }
 </style>

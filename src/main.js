@@ -10,7 +10,7 @@ import VueLazyload from 'vue-lazyload';
 import DyLoading from './components/loading';
 import * as filter from "./common/filter";
 import scrollReveal from "scrollreveal";
-import './assets/scss/index.scss';
+// import './assets/scss/index.scss';
 
 Vue.config.devtools = true;
 Vue.config.performance = true;
