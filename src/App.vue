@@ -12,9 +12,7 @@ export default {
   }
 };
 </script>
-
-<style lang="less">
-@import url('./assets/less/normalize.less');
-@import url('./assets/less/index.less');
+<style lang="scss">
+@import './assets/scss/normalize.scss';
+@import './assets/scss/common.scss';
 </style>
-

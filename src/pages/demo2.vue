@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style  scoped>
-@import '../assets/less/variable.less';
+@import '../assets/scss/variable.scss';
 .demo2-page {
   font-size: 18px;
 }

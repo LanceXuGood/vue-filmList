@@ -1,18 +1,17 @@
 <template>
   <div class="home-page">
     <dy-loading :loading="loading"></dy-loading>
-    <home-list-item></home-list-item>
+    <home-list></home-list>
   </div>
 </template>
 
 <script>
-import HomeListItem from '../components/home-list-item.vue';
+import HomeList from '../components/home-list.vue';
 import TopBar from '../components/top-bar.vue';
 export default {
-  name: '',
-  props: {},
+  name: 'Home',
   components: {
-    HomeListItem,
+    HomeList,
     TopBar
   },
   data() {
@@ -20,14 +19,11 @@ export default {
       loading: true
     };
   },
-  methods: {},
-  beforeMount() {},
-  mounted() {}
 };
 </script>
 
-<style scoped>
-@import '../assets/less/variable.less';
+<style lang="scss" scoped>
+@import '../assets/scss/variable.scss';
 .home-page {
   font-size: 16px;
   position: relative;

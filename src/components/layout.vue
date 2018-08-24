@@ -29,8 +29,8 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-@import '../assets/less/variable.less';
+<style lang="scss" scoped>
+@import '../assets/scss/variable.scss';
 .dy-content {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -73,6 +73,6 @@ export default {
   }
 }
 .dy-nav.router-link-active{
-  color: @primary-color
+  color: $primary-color
 }
 </style>

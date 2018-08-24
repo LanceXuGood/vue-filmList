@@ -36,17 +36,21 @@
         </div>
       </router-link>
     </div>
-    <!-- <transition name="fade">
-      <p class="tipText" v-show="home.isLoading">{{tipText}}</p>
-    </transition> -->
   </div>
 </template>
 
 <script>
 import { getDouBanFilmList } from '@/common/api/home';
 export default {
-  name: "",
-
+  name: "HomeList",
+  created() {
+    this.getList({
+      apikey: "0b2bdeda43b5688921839c8ecb20399b",
+      city: "上海",
+      start: 0,
+      count: 100
+    });
+  },
   data() {
     return {
       ScrollReveal: this.scrollReveal(),
@@ -67,26 +71,16 @@ export default {
           easing: 'linear',
           scale: 0.9,
           reset: true,
-
         });
         this.$parent.loading = false;
       });
     }
   },
-
-  beforeMount() {
-    this.getList({
-      apikey: "0b2bdeda43b5688921839c8ecb20399b",
-      city: "上海",
-      start: 0,
-      count: 100
-    });
-  },
 };
 </script>
 
-<style lang="less" scoped>
-@import url('../assets/less/variable.less');
+<style lang="scss" scoped>
+@import '../assets/scss/variable.scss';
 
 .home-list {
   width: 100%;
@@ -173,7 +167,7 @@ export default {
     margin-right: 5px;
     border-color: #e3f1ed;
     background-color: #f2f8f2;
-    color: @sub-color;
+    color: $sub-color;
   }
 }
 .directors,
@@ -198,13 +192,5 @@ export default {
   height: 60px;
   font-size: 16px;
   line-height: 60px;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>

@@ -1,9 +1,9 @@
 import {
   mount
 } from '@vue/test-utils';
-import Layout from '@/components/Layout.vue';
+import Layout from '@/components/layout.vue';
 
-describe('Layout.vue', () => {
+describe('layout.vue', () => {
   it('Layout', () => {
     const wrapper = mount(Layout, {
       stubs: ['router-link', 'router-view'],

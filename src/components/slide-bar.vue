@@ -46,8 +46,8 @@ export default {
 };
 </script>
 
-<style lang="less" scoped >
-@import '../assets/less/variable.less';
+<style lang="scss" scoped >
+@import '../assets/scss/variable.scss';
 .slide-bar {
   position: fixed;
   top: 0;

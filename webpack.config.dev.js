@@ -64,21 +64,12 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: [{
-            test: /\.css/,
-            use: [{
-                loader: 'css-loader',
-                options: {
-                  importLoaders: 2,
-                }
-              },
-              'style-loader',
-              {
-                loader: 'postcss-loader',
-                options: {
-                  sourceMap: 'inline',
-                }
-              },
-              'less-loader'
+            test: /\.scss/,
+            use: [
+              'vue-style-loader',
+              'css-loader',
+              'postcss-loader',
+              'sass-loader',
             ],
           }]
         },
@@ -92,11 +83,12 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.less$/,
+        test: /\.scss$/,
         use: [
-          'vue-style-loader',
+          'style-loader',
           'css-loader',
-          'less-loader'
+          'postcss-loader',
+          'sass-loader',
         ]
       },
       {

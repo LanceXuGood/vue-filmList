@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style  scoped>
-@import '../assets/less/variable.less';
+@import '../assets/scss/variable.scss';
 .test-page {
   font-size: 16px;
 }

@@ -13,14 +13,13 @@ export default {
 };
 </script>
 
-<style lang="less" scoped >
-@import '../assets/less/index.less';
-@import '../assets/less/variable.less';
+<style lang="scss" scoped >
+@import '../assets/scss/variable.scss';
 .top-bar {
   padding: 0 10px;
   height: 50px;
   overflow: hidden;
-  background: @primary-color;
+  background: $primary-color;
   line-height: 50px;
   color: #999;
   font-size: 16px;

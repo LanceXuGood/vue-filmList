@@ -23,7 +23,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped >
+<style lang="scss" scoped >
 .loading-warpper {
   z-index: 999;
   width: 100%;
