@@ -6,7 +6,6 @@ import * as actions from './actions';
 import * as getters from './getters';
 
 //test 状态管理
-import test from './modules/test';
 import home from './modules/home';
 import D1 from './modules/D1';
 // console log vuex
@@ -19,7 +18,6 @@ export default new Vuex.Store({
   actions,
   getters,
   modules: {
-    test,
     home,
     D1
   },

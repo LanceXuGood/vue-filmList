@@ -21,36 +21,40 @@
 # 更改
 
     * 2017-06-27
-        webpack升级3.0
+      webpack升级3.0
 
     * 2017-12-05
-        修复babel问题，build文件修复
+      修复babel问题，build文件修复
 
     * 2017-12-28
-        重新优化build,将koa集成，服务器部署，通过nginx做的反向代理。数据采用node作为转发层，抓取豆瓣影视的借口获取数据。
+      重新优化build,将koa集成，服务器部署，通过nginx做的反向代理。数据采用node作为转发层，抓取豆瓣影视的借口获取数据。
 
     * 2017-12-30
-        合并dev到master,优化部分代码：完成了film-item的组件
+      合并dev到master,优化部分代码：完成了film-item的组件
 
     * 2018-2-27
-        服务器集成jenkin,自动构建部署（暂时只是github搭建的，晚点会上gitlab,打算拿公司的项目着手）。
+      服务器集成jenkin,自动构建部署（暂时只是github搭建的，晚点会上gitlab,打算拿公司的项目着手）。
 
     * 2018-2-27
-        加入lazyload组件。优化部分代码。
+      加入lazyload组件。优化部分代码。
 
      * 2018-3-18
-        postcss完善配置项，rem升级到vw(采坑淘宝适配方案), cssnext替代sass文件，优化package.json文件，去除无用组件。
+      postcss完善配置项，rem升级到vw(采坑淘宝适配方案), cssnext替代sass文件，优化package.json文件，去除无用组件。
 
     * 2018-3-22
-        film-item界面重新布局，服务器端配置数据库。
+      film-item界面重新布局，服务器端配置数据库。
 
-    * 2018-3-22
-        film-item界面重新布局，服务器端配置数据库。
+    * 2018-6-02
+      服务器迁移
 
     * 2018-8-15
       项目中babel重新优化，webpack升级4.x。
+      
+    * 2018-8-23
+      增加单元测试
 
 # ToDo
     * 将主页的film-item剥离 (Done)
     * film-detail页面的实现 (30%)
+    * 单元测试介入(50%)
     * 注册接口。
