@@ -60,7 +60,6 @@ export default {
   methods: {
     async getList(query) {
       this.home = await getDouBanFilmList(query);
-
       this.$nextTick(()=>{
         this.ScrollReveal.reveal('.home-list .film-item', {
           container: '.home-list',

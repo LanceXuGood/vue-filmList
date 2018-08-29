@@ -1,17 +1,14 @@
 <template>
   <div class="search-page">
-      <search-bar/>
+
   </div>
 </template>
 
 <script>
-import SearchBar from '@/components/search-bar.vue'
 export default {
   name: 'Search',
   props: {},
-  components: {
-    SearchBar,
-  },
+
   data() {
     return {
       filmData: {}

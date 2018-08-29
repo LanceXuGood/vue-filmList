@@ -7,12 +7,10 @@
 
 <script>
 import HomeList from '../components/home-list.vue';
-import TopBar from '../components/top-bar.vue';
 export default {
   name: 'Home',
   components: {
     HomeList,
-    TopBar
   },
   data() {
     return {
