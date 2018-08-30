@@ -1,6 +1,6 @@
 <template>
-  <div class="home-list" ref="list">
-    <div v-for="(item,index) in home.subjects" :key="index" class="film-item">
+  <ul class="home-list" ref="list">
+    <li v-for="(item,index) in home.subjects" :key="index" class="film-item">
       <router-link :to="`/film-detail/${item.id}`">
         <div class="left">
           <img v-lazy="item.images.small" alt="" class="image">
@@ -35,8 +35,11 @@
           </div>
         </div>
       </router-link>
-    </div>
-  </div>
+    </li>
+    <li>
+      就这么多了，你看着办吧！
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -87,30 +90,42 @@ export default {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-.left {
-  width: 30%;
-  margin-right: 20px;
-  .image {
-    width: 85%;
-  }
-}
+
 .film-item {
   box-shadow: 0 0 4px 0 rgba(232, 237, 250, 0.6),
     0 1px 2px 0 rgba(232, 237, 250, 0.5);
   padding: 4px;
-  padding-bottom: 10px;
   margin-bottom: 10px;
   margin-top: 10px;
   overflow: hidden;
+  height: 180px;
+
   p,
   div {
     color: #666;
   }
   > a {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+  }
+}
+.film-item:first-of-type{
+  margin-top: 0;
+}
+ul>li:last-of-type{
+  line-height: 20px;
+  font-size: 12px;
+  color: darkgrey
+}
+
+.left {
+  width: 30%;
+  margin-right: 10px;
+  .image {
+    width: 100%;
   }
 }
 .content {
