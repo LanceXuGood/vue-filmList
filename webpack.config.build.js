@@ -5,7 +5,8 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin'); //这个插件不支持热加载，所以开发环境不支持
-const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
 module.exports = {
   mode: 'production',
   entry: {
@@ -13,8 +14,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].[hash:8].js',
-    chunkFilename: 'js/[id].[hash:8].js',
+    filename: 'js/[name].[hash].js',
+    chunkFilename: 'js/[id].[hash].js',
     publicPath: ''
   },
   resolve: {
@@ -36,24 +37,10 @@ module.exports = {
           }
         }],
         exclude: /node_modules/,
-      }, {
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          loaders: [{
-            test: /\.css/,
-            use: [
-              'style-loader',
-              {
-                loader: 'css-loader',
-                options: {
-                  importLoaders: 2,
-                }
-              },
-              'postcss-loader'
-            ],
-          }]
-        },
         exclude: /node_modules/
       },
       {
@@ -64,8 +51,18 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
+        exclude: /node_modules/
+      },
+      {
         test: /\.css/,
-        use: ExtractTextPlugin.extract([
+        use: [
           'style-loader',
           {
             loader: 'css-loader',
@@ -75,33 +72,40 @@ module.exports = {
           },
           'postcss-loader',
 
-        ]),
+        ],
         exclude: /node_modules/
       }
     ]
   },
   context: __dirname,
-  plugins: [
-
-    new webpack.HashedModuleIdsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks(module) {
-        // any required modules inside node_modules are extracted to vendor
-        return (
-          module.resource &&
-          /\.js$/.test(module.resource) &&
-          module.resource.indexOf(
-            path.join(__dirname, './node_modules')
-          ) === 0
-        )
+  // webpack4之后，optimize.CommonsChunkPlugin 插件已经内置
+  optimization: {
+    splitChunks: {
+      chunks: "async",
+      minSize: 30000,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      name: true,
+      // 缓存组
+      cacheGroups: {
+        commons: {
+          name: 'commons',
+          chunks: 'initial',
+          minChunks: 2
+        },
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
       }
-    }),
-    //
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "manifest",
-      minChunks: Infinity
-    }),
+    },
+  },
+  plugins: [
+    new VueLoaderPlugin(),
+    new webpack.HashedModuleIdsPlugin(),
+
     new ExtractTextPlugin({
       filename: '[name].[hash:8].css',
       allChunks: true,
