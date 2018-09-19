@@ -17,9 +17,8 @@
 
 # 启动 运行
 
-    yarn                      npm
-    yarn install              npm install
-    yarn start                npm start        
+   > yarn yarn install yarn start                                                    
+   > npm npm install  npm start        
 
 
 # 更改
