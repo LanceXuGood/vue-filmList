@@ -7,7 +7,7 @@
     3.dev-vm 采用vm自适应（具体的参数还未调整，具体什么坑，还没注意到）====》 取消vm的适配方案，采用px实现，
 
 # vue + vuex 尝试
-  * >前端技术迭代很快，所以作为一个前端，我们需要不停学习，此项目用来练习Vue技术栈
+  * >前端技术迭代很快，所以作为一个前端，我们需要不停学习，此项目用来练习Vue技术栈(react技术栈请转 => [react-filmList](https://github.com/LanceXuGood/react-flimList))
   * vue+vuex
     * 1.尝试构建vue程序
     * 2.webpack 4.0
