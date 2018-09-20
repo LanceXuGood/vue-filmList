@@ -1,6 +1,6 @@
 <template>
   <div class="button-component">
-    <slot name="buttons"></slot>
+    <slot name="buttons">不想用下面的按钮，自己再外层替换</slot>
     <br>
     <template v-if="!$slots.buttons">
       <button>1</button>
