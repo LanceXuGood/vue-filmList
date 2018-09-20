@@ -24,7 +24,5 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/scss/variable.scss';
-.search-page{
-  //  @include flex-center;
-}
+
 </style>

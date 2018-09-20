@@ -1,10 +1,16 @@
 <template>
   <div class="test-page">
+    <div>这里是使用自己的button组</div>
     <Button>
       <div slot="buttons">
         <button>3</button>
         <button>4</button>
       </div>
+    </Button>
+    <hr/>
+    <div>这是使用默认的按钮组</div>
+    <Button>
+
     </Button>
     我是徐😀
   </div>
@@ -34,7 +40,4 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/scss/variable.scss';
-.test-page{
-  //  @include flex-center;
-}
 </style>
