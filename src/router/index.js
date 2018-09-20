@@ -8,6 +8,8 @@ const FilDetail = () =>
     import (/* webpackChunkName: "FilmDetailView" */ '@/pages/film-detial.vue');
 const Search = () =>
     import (/* webpackChunkName: "SearchView" */ '@/pages/search.vue');
+const Test = () =>
+    import (/* webpackChunkName: "SearchView" */ '@/pages/test.vue');
 
 // const demo1 = () =>
 //     import (/* webpackChunkName: "HomeView" */ '../pages/demo1.vue');
@@ -33,7 +35,12 @@ const routes = [{
 {
   path: '/film-detail/:id',
   component: FilDetail
-}];
+},
+{
+  path: '/test',
+  component: Test
+}
+];
 
 const router = new VueRouter({
   mode: 'history',
