@@ -10,6 +10,11 @@ const Search = () =>
     import (/* webpackChunkName: "SearchView" */ '@/pages/search.vue');
 const Test = () =>
     import (/* webpackChunkName: "SearchView" */ '@/pages/test.vue');
+const CaiCai = () =>
+    import (/* webpackChunkName: "SearchView" */ '@/pages/caicai.vue');
+const JingJing = () =>
+    import (/* webpackChunkName: "SearchView" */ '@/pages/jingjing.vue');
+
 
 // const demo1 = () =>
 //     import (/* webpackChunkName: "HomeView" */ '../pages/demo1.vue');
@@ -39,6 +44,14 @@ const routes = [{
 {
   path: '/test',
   component: Test
+},
+{
+  path: '/jingjing',
+  component: JingJing
+},
+{
+  path: '/caicai',
+  component: CaiCai
 }
 ];
 
